@@ -10,37 +10,37 @@ var favoriteColor = prompt("What is your favorite color?");
 
 //You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
 
-var littleM = prompt("How many days are you renting Little Mermaid?");
+var littleMermaid = prompt("How many days are you renting The Little Mermaid");
 //3 ;
-var brotherB = prompt("How many days are you renting Brother Bear?");
+var brotherBear = prompt("How many days are you renting Brother Bear?");
 //5;
 var hercules = prompt("How many days are you renting Hercules?");
 //1;
-var rentalRate = 3;
+var rentalPrice = 3;
 
 
-var totalPrice = (littleM * rentalRate) + (brotherB * rentalRate) + (hercules*rentalRate);
+var totalPrice = (littleMermaid * rentalPrice) + (brotherBear * rentalPrice) + (hercules*rentalPrice);
 
 alert("Your total price is $" +totalPrice+ " !");
 
 //Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate per hour. Google pays $400, Amazon $380, and Facebook $350. How much will you receive in payment for this week? You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
 
 
-var googleHourRate= prompt ("How much do you charge to Google?");
-//400
-var amazonHourRate = prompt ("How much do you charge to Amazon?");
-//380
-var facebookHourRate = prompt ("How much do you charge to Facebook?");
-//350
+var googlePay= prompt ("How much do you make at Google?");
 
-googleTime = prompt ("How many hours did you work for Google?");
-//6
-amazonTime = prompt ("How many hours did you work for Amazon?");
-// 4
-facebookTime = prompt ("How many hours did you work for facebook?");
-//10
+var amazonPay = prompt ("How much do you make at Amazon?");
 
-var paycheck = (googleHourRate * googleTime) + (amazonHourRate * amazonTime) + (facebookHourRate * facebookTime);
+var facebookPay = prompt ("How much do you make at Facebook?");
+
+
+googleHours = prompt ("How many hours did you work for Google?");
+
+amazonHours= prompt ("How many hours did you work for Amazon?");
+
+facebookHours = prompt ("How many hours did you work for facebook?");
+
+
+var paycheck = (googlePay * googleHours) + (amazonPay * amazonHours) + (facebookPay * facebookHours);
 
 alert("Your total paycheck is $" + paycheck+ " !");
 
