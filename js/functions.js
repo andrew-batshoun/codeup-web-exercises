@@ -113,3 +113,4 @@ var discountPercent = parseFloat(prompt("what is the discount percentage?"));
 
 alert("The total price is " + applyDiscount().toFixed(2));
 })();
+
