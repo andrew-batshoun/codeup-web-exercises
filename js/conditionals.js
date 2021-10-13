@@ -155,14 +155,14 @@
      * Can you refactor your code to use functions?
      * HINT: The way we prompt for a value could be improved
      */
-// var userNumber = (confirm("Would you like to pick a number?"));
-// if(userNumber === true){
-//     var userInput = (parseFloat(prompt("What number would you like to choose?")));
-//     alert((userInput % 2 == 0) ? "This number is even." : "This number is odd");
-//     alert("Your number plus 100 is " + (userInput + 100));
-//     alert((Math.sign(userInput) > 0) ? "This is a positive number" : "This is a negative number");
-//     }else {
-//     alert("I guess you don't want to know about numbers.");
-// }
+var userNumber = (confirm("Would you like to pick a number?"));
+if(userNumber === true){
+    var userInput = (parseFloat(prompt("What number would you like to choose?")));
+    alert((userInput % 2 == 0) ? "This number is even." : "This number is odd");
+    alert("Your number plus 100 is " + (userInput + 100));
+    alert((Math.sign(userInput) > 0) ? "This is a positive number" : "This is a negative number");
+    }else {
+    alert("I guess you don't want to know about numbers.");
+}
 
 })();
