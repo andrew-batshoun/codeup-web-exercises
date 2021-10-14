@@ -50,30 +50,18 @@
      * TODO:
      * Refactor your above function to use a switch-case statement
      */
-
-    switch (randomColor) {
-        case "red":
-            console.log("Red is the color of apples.");
-            break;
-        case "orange":
-            console.log("Orange has the same color as the fruit.");
-            break;
-        case "yellow":
-            console.log("Yellow is a really bright color.");
-            break;
-        case "green":
-            console.log("Green reminds me of money.");
-            break;
-        case "blue":
-            console.log("Cool! Blue is my favorite color.");
-            break;
-        case "indigo":
-            console.log("Isn't indigo the same as blue?");
-            break;
-        default:
-            console.log("Oh! Violet is a fantastic color.");
+function analyzeColor(colorName) {
+        switch (colorName) {
+            case "red":
+                return "Red is the color of apples.";
+            case "orange":
+                return "Orange has the same color as the fruit.";
+            default:
+                return "I don't know anything about that color";
+                break;
+        }
     }
-
+console.log(analyzeColor("blue"))
     /**
      * TODO:
      * Prompt the user for a color when the page loads, and pass the input from the
@@ -136,7 +124,7 @@
     var totalBill = parseFloat(prompt("What is your total?"));
 
     alert("Your lucky number is " + luckyNumber);
-    alert("Your total bill was " + totalBill + " With the discount it is " + calculateTotal(luckyNumber, totalBill));
+    alert("Your total bill was " + totalBill + " With the discount it is " + (calculateTotal(luckyNumber, totalBill).toFixed(2)));
 
 
     /**
@@ -155,14 +143,27 @@
      * Can you refactor your code to use functions?
      * HINT: The way we prompt for a value could be improved
      */
+
+        // var userNumber = (confirm("Would you like to pick a number?"));
+        // if (userNumber === true) {
+function numberChoose(userNumber) {
+        var userInput = (parseFloat(prompt("What number would you like to choose?")));
+        if (!isNaN(userInput)) {
+            alert((userInput % 2 == 0) ? "This number is even." : "This number is odd");
+            alert("Your number plus 100 is " + (userInput + 100));
+            alert((Math.sign(userInput) > 0) ? "This is a positive number" : "This is a negative number");
+        } else {
+            alert("That is not a number");
+        }
+    }
+
 var userNumber = (confirm("Would you like to pick a number?"));
-if(userNumber === true){
-    var userInput = (parseFloat(prompt("What number would you like to choose?")));
-    alert((userInput % 2 == 0) ? "This number is even." : "This number is odd");
-    alert("Your number plus 100 is " + (userInput + 100));
-    alert((Math.sign(userInput) > 0) ? "This is a positive number" : "This is a negative number");
-    }else {
+if (userNumber === true){
+    numberChoose();
+} else {
     alert("I guess you don't want to know about numbers.");
 }
+
+
 
 })();
