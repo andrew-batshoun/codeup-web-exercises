@@ -31,3 +31,28 @@ var hadBreakfast = Boolean(Math.round(Math.random()));
 var hadBreakfastMessage = (hadBreakfast) ? "I had breakfast today, it was delicious!" : "I didn't have breakfast and I am starving";
 
 console.log(hadBreakfastMessage);
+
+//******************OCTOBER 15********************
+
+//Write a function called 'typeCheck' that takes an input and returns a string of the data type entered. If the data type is a string, return the string "Haha, it's a string of string!"
+
+/* Tests:
+typeCheck('')
+typeCheck(isNaN());
+typeCheck(!false * 3);
+typeCheck(4 + ‘4’);
+ */
+
+function typeCheck(typeInput){
+    if(typeof typeInput === "string") {
+        return 'haha, it\'s a string of a string';
+    } else{
+        return typeof typeInput;
+    }
+
+}
+
+console.log("input is an empty string: ", typeCheck(''))
+console.log("input isNan():", typeCheck(isNaN()))
+console.log("input is !false * 3", typeCheck(!false * 3))
+console.log("input is 4+4", typeCheck( 4 + '4'))
