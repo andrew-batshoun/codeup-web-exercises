@@ -4,7 +4,6 @@
 
 while (true){
     var promptNum = parseFloat(prompt("Choose a number between 1 and 50."))
-    // alert("That is not valid");
     if(!isNaN(promptNum)){
         break;
     }
