@@ -56,3 +56,13 @@ console.log("input is an empty string: ", typeCheck(''))
 console.log("input isNan():", typeCheck(isNaN()))
 console.log("input is !false * 3", typeCheck(!false * 3))
 console.log("input is 4+4", typeCheck( 4 + '4'))
+
+//*********************OCTOBER 18****************
+// When writing code to test our tests in TDD it’s important to put yourself in the mindset of a (junior/senior) web developer. This will help you in ensuring that our tests are fully comprehensive.
+//     When writing code with tests provided to me, it’s important for me to write code:
+//     A. With minimal effectiveness so as to green all the tests.
+//     B. With full functionality so as to ensure my function works as intended
+// C. Both
+
+// You want to have the mindset of a junior developer. It is important to write code with minimal effectiveness so as to green all the tests and with full functionality so  as to ensure the function works as intended.
+
