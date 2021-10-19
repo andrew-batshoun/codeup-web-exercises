@@ -35,12 +35,12 @@ console.log(names[3]);
      */
 
 
-function namesLoop(array){
-for(var i = 0; i < array.length; i++ ){
-    console.log(array[i]);
+
+for(var i = 0; i < names.length; i++ ){
+    console.log(names[i]);
 }
-    }
-namesLoop(names);
+
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
@@ -74,9 +74,9 @@ function secondItem(arr){
     }
 console.log(secondItem(names));
 
-function thirdItem(arr){
-    return  arr[2];
+function lastItem(arr){
+    return  arr[arr.length - 1];
     }
-console.log(thirdItem(names));
+console.log(lastItem(names));
 
 })();
