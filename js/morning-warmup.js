@@ -66,3 +66,23 @@ console.log("input is 4+4", typeCheck( 4 + '4'))
 
 // You want to have the mindset of a junior developer. It is important to write code with minimal effectiveness so as to green all the tests and with full functionality so  as to ensure the function works as intended.
 
+//****************OCTOBER 19************
+
+
+//Write a program that console.logs the numbers from 1 to 100. But for multiples of three console.log “Fizz” instead of the number and for the multiples of five console.log “Buzz”. For numbers which are multiples of both three and five console.log “FizzBuzz”.
+
+for (var i = 1; i <= 100; i++){
+    if(i % 5 === 0 && i % 3 === 0){
+        console.log(i + " FizzBuzz");
+    }else if (i % 3===0){
+        console.log(i +" Fizz");
+    }else if (i % 5===0){
+        console.log(i + "Buzz");
+
+    }
+}
+
+// Used an else statement that returned console.log(i)
+
+
+
