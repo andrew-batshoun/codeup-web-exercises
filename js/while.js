@@ -7,7 +7,7 @@ while (i < 65536){
         console.log(i);
 }
 
-})();
+
 
 // Do while exercise
 
@@ -24,3 +24,4 @@ do {
 } while (someCones > allCones){
 
 }
+})();
