@@ -28,8 +28,13 @@ var brPlanets = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranu
 document.write(brPlanets);
 console.log(brPlanets);
 
+//class answer** var brPlanets = planetsArray.join("<br>");
+
 // In the console it only shows <br> but this might be useful to print inside the webpage instead of the console log.
+
 var listPlanets =  "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>";
+console.log(listPlanets);
 document.write(listPlanets);
 
+//class answer** var listPlanets = "<ul><li>" + planetsArray.join("</li><li>") + "</ul>";
 })();
