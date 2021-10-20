@@ -85,4 +85,11 @@ for (var i = 1; i <= 100; i++){
 // Used an else statement that returned console.log(i)
 
 
+//**************** OCTOBER 20****************
 
+//Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
+var randomArrary = [ "one" , "two", "three", "four"]
+function secondToLast(arr){
+    return arr[arr.length - 2] ;
+}
+console.log(secondToLast(randomArrary))
