@@ -93,3 +93,19 @@ function secondToLast(arr){
     return arr[arr.length - 2] ;
 }
 console.log(secondToLast(randomArrary))
+
+//****************OCTOBER 21****************
+
+// Write a function named ‘moveToEnd’ that takes in an array, and returns the array with the original first index moved to the last index of the array.
+//
+//     Example:
+// moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
+// moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
+
+function moveToEnd(arr){
+    var removeFront = arr.shift()
+    arr.push(removeFront)
+    return arr;
+}
+
+console.log(moveToEnd([1, 2, 3, 4]));
