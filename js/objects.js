@@ -27,9 +27,9 @@ console.log(person);
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 person.sayHello = function (){
-    console.log("Hello from " + person.firstName + " " + person.lastName);
+    return "Hello from " + person.firstName + " " + person.lastName;
 }
-person.sayHello()
+console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -52,16 +52,29 @@ person.sayHello()
     ];
 
 
-    shoppers.forEach(function (shoppers){
-        var priceTotal = shoppers.amount;
-        var newPrice = shoppers.amount - (shoppers.amount * .12);
-        if (shoppers.amount >= 200) {
-            console.log("Congratulations, " + shoppers.name + "! You get a 12 percent discount. Your previous total was: " + priceTotal.toFixed(2) + " but now you pay: " + newPrice.toFixed(2));
+    shoppers.forEach(function (shopper){
+        var priceTotal = shopper.amount;
+        var newPrice = shopper.amount - (shopper.amount * .12);
+        if (shopper.amount > 200) {
+            console.log("Congratulations, " + shopper.name + "! You get a 12 percent discount. Your previous total was: " + priceTotal.toFixed(2) + " but now you pay: " + newPrice.toFixed(2));
          } else{
-            console.log("Hey " + shoppers.name + ", Your total is: " + priceTotal.toFixed(2));
+            console.log("Hey " + shopper.name + ", Your total is: " + priceTotal.toFixed(2));
         }
     })
+//Jay's walk through
+    /*
+    function displayShopperAmount(arr) {
+    arr.foreach(function(shopper) {
+        if(shopper.amount > 200) {
+            console.log(shopper.name + ": spent " + shopper.amount + ". Which applies for a discount. Discounted amount: " + (shopper.amount * .12) + ". The discounted price is: " + shopper.amount - (shopper.amount * .12));
+            } else {
+            console.log(shopper.name + ": spent " + shopper.amount + ". Which does not apply for discount")
+        }
+    })
+}
 
+displayShopperAmount(shoppers)
+     */
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -142,12 +155,17 @@ console.log(books[0].author.lastName);
 ;
 
 // books.forEach(function(book){
-//     console.log("Book # " + books.indexOf(book) + 1);
+//     console.log("Book # " + (books.indexOf(book) + 1));
 //     console.log("Title: " + book.title);
 //     console.log("Author: " + book.author.firstName + ' ' + book.author.lastName);
 //     console.log("---")
 // })
 
+/*Jay's answer
+for(var j = 0, j < books.length; j++) {
+    console.log("Book # " + (j + 1) + '\nTitle: ' + books[j].title + "\n"Author: " + book.author.firstName + ' ' + book.author.lastName);
+}
+ */
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -174,7 +192,29 @@ console.log(books[0].author.lastName);
 // console.log(createBook("james and the peach", "james", "peach"))
 
 
-function showBookInfo(bookObject){
+/*Jay's answer:
+ var library = [];
+ function createBook(title, author){
+    //expected input: 'firstName lastName'
+    var namesArray = author.split(" ");
+        var book = {
+            title: title,
+            author: {
+                firstName: namesArray[0],
+                lastName: namesArray[1]
+
+            }
+        }
+        return library.push(book);
+    }
+
+createBook(title, author);
+
+ */
+
+
+
+    function showBookInfo(bookObject){
 bookObject.forEach(function(book){
     console.log("Book # " + (bookObject.indexOf(book)+ 1));
     console.log("Title: " + book.title);
@@ -185,5 +225,15 @@ bookObject.forEach(function(book){
 }
 
 showBookInfo(books);
+
+/* Jay's Answer
+function showBookInfo(array){
+for(var j = 0, j < array.length; j++) {
+    console.log("Book # " + (j + 1) + '\nTitle: ' + array[j].title + "\n"Author: " + array.author.firstName + ' ' + array.author.lastName);
+}
+
+}
+showBookInfo(books)
+ */
 
 })();
