@@ -75,45 +75,45 @@ person.sayHello()
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-// var books = [
-//         {
-//         title: "The ScrewTape Letters",
-//         author:{
-//             firstName: "C.S",
-//             lastName: "Lewis",
-//             }
-//         },
-//         {
-//         title: "The Fold",
-//         author:{
-//             firstName:"Peter",
-//             lastName:"Clines",
-//             }
-//         },
-//         {
-//         title:"The Hitchhikers Guide",
-//         author:{
-//             firstName:"Douglas",
-//             lastName:"Adams",
-//             }
-//         },
-//         {
-//         title: "The 48 Laws of Power",
-//         author:{
-//             firstName:"Robert",
-//             lastName:"Greene",
-//             }
-//         },
-//         {
-//         title:"The Broker",
-//         author:{
-//             firstName:"John",
-//             lastName:"Grisham",
-//             }
-// }]
-// console.log(books[3].title);
-// console.log(books[1].author.firstName);
-// console.log(books[4].author.lastName);
+var books = [
+        {
+        title: "The ScrewTape Letters",
+        author:{
+            firstName: "C.S",
+            lastName: "Lewis",
+            }
+        },
+        {
+        title: "The Fold",
+        author:{
+            firstName:"Peter",
+            lastName:"Clines",
+            }
+        },
+        {
+        title:"The Hitchhikers Guide",
+        author:{
+            firstName:"Douglas",
+            lastName:"Adams",
+            }
+        },
+        {
+        title: "The 48 Laws of Power",
+        author:{
+            firstName:"Robert",
+            lastName:"Greene",
+            }
+        },
+        {
+        title:"The Broker",
+        author:{
+            firstName:"John",
+            lastName:"Grisham",
+            }
+}]
+console.log(books[0].title);
+console.log(books[0].author.firstName);
+console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -139,11 +139,12 @@ person.sayHello()
      *      ---
      *      ...
      */
-// var bookNum = books.indexOf(books.title) + 2 ;
-// books.forEach(function(books){
-//     console.log("Book # " + bookNum++);
-//     console.log("Title: " + books.title);
-//     console.log("Author: " + books.author.firstName);
+;
+
+// books.forEach(function(book){
+//     console.log("Book # " + books.indexOf(book) + 1);
+//     console.log("Title: " + book.title);
+//     console.log("Author: " + book.author.firstName + ' ' + book.author.lastName);
 //     console.log("---")
 // })
 
@@ -158,6 +159,31 @@ person.sayHello()
      *   `showBookInfo` function.
      */
 
+// function createBook(title, authorFirst, authorLast) {
+//         var books = new Object({
+//             title: title,
+//             author: {
+//                 firstName: authorFirst,
+//                 lastName: authorLast,
+//             }
+//             })
+//
+//         return books;
+//     }
+//
+// console.log(createBook("james and the peach", "james", "peach"))
 
+
+function showBookInfo(bookObject){
+bookObject.forEach(function(book){
+    console.log("Book # " + (bookObject.indexOf(book)+ 1));
+    console.log("Title: " + book.title);
+    console.log("Author: " + book.author.firstName + ' ' + book.author.lastName);
+    console.log("---")
+    })
+
+}
+
+showBookInfo(books);
 
 })();
