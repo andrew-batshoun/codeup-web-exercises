@@ -51,10 +51,19 @@ console.log(removeAll(bugs, "roach")); //should return the original array b/c "r
 
 //     Make a function called randomIntBetween(min, max) that returns a random number between the min and the max.
 function randomIntBetween(min, max){
-
+ var randomNumber = Math.floor(Math.random() * (max - min)+ min)
+ return randomNumber;
 }
 
+console.log(randomIntBetween(1, 10));
+
 //     Make a function called coinFlip() that returns either 0 or 1, randomly
+function coinFlip(){
+    var oneOrZero = Math.round(Math.random());
+    return oneOrZero;
+}
+
+console.log(coinFlip());
 // Make a function called twoDice() that returns the sum of rolling two six sided dice.
 //     Make a function called twentySidedDie() that returns a random integer between 1 and 20.
 // Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
