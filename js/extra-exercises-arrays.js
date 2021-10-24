@@ -65,12 +65,47 @@ function coinFlip(){
 
 console.log(coinFlip());
 // Make a function called twoDice() that returns the sum of rolling two six sided dice.
+function twoDice(){
+    var totalDice = randomIntBetween(1, 7) + randomIntBetween(1, 7);
+    return totalDice;
+}
+console.log(twoDice());
+
 //     Make a function called twentySidedDie() that returns a random integer between 1 and 20.
+function twentySidedDie(){
+    var twentyRandom = randomIntBetween(1, 20);
+    return twentyRandom;
+}
+
+console.log(twentySidedDie());
+
 // Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
+function twelveSidedDie(){
+    var twelveRandom = randomIntBetween(1, 12)
+    return twelveRandom;
+}
+console.log(twelveSidedDie())
 // Make a function called tetrahedron() that returns a random integer between 1 and 4.
+function tetrahedron(){
+    var tetraRandom = randomIntBetween(1, 4);
+    return tetraRandom;
+}
+console.log(tetrahedron());
 // Make a function called rollDie() that returns an integer between 1 and 6.
+function rollDie(){
+    var rollRandom = randomIntBetween(1, 6);
+    return rollRandom;
+}
+console.log(rollDie());
 // Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make. The listOfRolls function should return an array of that length, where each element of the array is the result of the rollDie function.
-//
+
+function listOfRolls(num){
+    var rollArray = [];
+    for(var i = 0; i < num; i++) {
+        rollArray.push(rollDie());
+    }return rollArray;
+}
+console.log(listOfRolls(11));
 // Make a function called listOfRollsFromDieFunc(numberOfRolls, diceFunction)
 //
 // This function should take in two arguments:
