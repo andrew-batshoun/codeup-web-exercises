@@ -120,16 +120,19 @@ function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
         listArray.push(diceFunction);
     }return listArray;
 }
-console.log(listOfRollsFromDieFunc(5, twentySidedDie()));
+console.log(listOfRollsFromDieFunc(5, twentySidedDie));
 // /**
 //  * JS Array Practice
 //  * Intermediate Array practice: array creation, iteration, and manipulation
 //  */
 //
 // // Exercise 0. Write a function named first() that returns only the first element of an array
-//
+function first(array){
+    return  array[0];
+}
+console.log(first([1, 2, 3, 4]));
 // // Exercise 1. Write a function named secondToLast() that returns the second to last element
-//
+
 // // Exercise 2. Write a function named rest() that takes an an array and returns an array containing everything except the first element.
 //
 // // Exercise 3. Write a function named getLongestString that takes in an array of strings and returns the longest string of that array
