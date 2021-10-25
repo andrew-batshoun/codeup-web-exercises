@@ -113,8 +113,14 @@ console.log(listOfRolls(11));
 //     The first argument is the number of rolls you want to make.
 //     The second argument is a function that contains the function definition for the type of die you want to roll.
 //     For example, if we call listOfDieRollsFromDieFunc(1, tetrahedron), then the function will return an array containing one value that is the result of calling the tetrahedron function.
-//
-//
+
+function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
+    var listArray = [];
+    for(var i = 0; i < numberOfRolls; i++) {
+        listArray.push(diceFunction);
+    }return listArray;
+}
+console.log(listOfRollsFromDieFunc(5, twentySidedDie()));
 // /**
 //  * JS Array Practice
 //  * Intermediate Array practice: array creation, iteration, and manipulation

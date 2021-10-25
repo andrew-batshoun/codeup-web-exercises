@@ -109,3 +109,23 @@ function moveToEnd(arr){
 }
 
 console.log(moveToEnd([1, 2, 3, 4]));
+
+//*******************OCTOBER 25********************
+
+
+//Visit https://www.pokemon.com/us/pokedex/ and select one of your favorite pokemon (it can
+// be whatever you choose) and create an object variable to represent the chosen pokemon.
+// The more information you have, the better! We will be using this for lecture today.
+
+var mewTwo = {
+    weight: 269,
+    height: {
+        feet: 6,
+        inches: 7,
+    },
+    gender: "unknown",
+    type: "psychic",
+    weakness: ["ghost", "dark", "bug"],
+    category: "genetic",
+    abilities: "pressure",
+};
