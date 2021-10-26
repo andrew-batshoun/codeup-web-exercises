@@ -43,7 +43,7 @@ function removeAll(array, value) {
     } return array;
 }
 
-console.log(removeAll(bugs, "ant"));; //should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
+console.log(removeAll(bugs, "ant"));//should return ["mosquito", "scorpion",   "mosquito", "typo", "reference error", "type error"]
 console.log(removeAll(bugs, "mosquito")); //should return ["ant", "scorpion", "ant",   "ant", "typo", "reference error", "type error"]
 console.log(removeAll(bugs, "roach")); //should return the original array b/c "roach" has no occurrences.
 
@@ -51,51 +51,50 @@ console.log(removeAll(bugs, "roach")); //should return the original array b/c "r
 
 //     Make a function called randomIntBetween(min, max) that returns a random number between the min and the max.
 function randomIntBetween(min, max){
- var randomNumber = Math.floor(Math.random() * (max - min)+ min)
- return randomNumber;
+    return Math.floor(Math.random() * (max - min)+ min);
+
 }
 
 console.log(randomIntBetween(1, 10));
 
 //     Make a function called coinFlip() that returns either 0 or 1, randomly
 function coinFlip(){
-    var oneOrZero = Math.round(Math.random());
-    return oneOrZero;
+    return Math.round(Math.random());
+
 }
 
 console.log(coinFlip());
 // Make a function called twoDice() that returns the sum of rolling two six sided dice.
 function twoDice(){
-    var totalDice = randomIntBetween(1, 7) + randomIntBetween(1, 7);
-    return totalDice;
+    return randomIntBetween(1, 7) + randomIntBetween(1, 7);
+
 }
 console.log(twoDice());
 
 //     Make a function called twentySidedDie() that returns a random integer between 1 and 20.
 function twentySidedDie(){
-    var twentyRandom = randomIntBetween(1, 20);
-    return twentyRandom;
+    return randomIntBetween(1, 20);
+
 }
 
 console.log(twentySidedDie());
 
 // Make a function called twelveSidedDie() that returns a random integer between 1 and 12.
 function twelveSidedDie(){
-    var twelveRandom = randomIntBetween(1, 12)
-    return twelveRandom;
+    return randomIntBetween(1, 12)
+
 }
 console.log(twelveSidedDie())
 // Make a function called tetrahedron() that returns a random integer between 1 and 4.
 function tetrahedron(){
-    var tetraRandom = randomIntBetween(1, 4);
-    return tetraRandom;
+    return randomIntBetween(1, 4);
 }
 console.log(tetrahedron());
 // Make a function called rollDie() that returns an integer between 1 and 6.
 function rollDie(){
-    var rollRandom = randomIntBetween(1, 6);
-    return rollRandom;
+    return randomIntBetween(1, 6);
 }
+
 console.log(rollDie());
 // Make a function called listOfRolls(num) that takes in a number containing how many 6-sided dice rolls you want to make. The listOfRolls function should return an array of that length, where each element of the array is the result of the rollDie function.
 
@@ -137,11 +136,35 @@ function secondToLast(array){
 }
 console.log(secondToLast([1,2,3,4,5,6,7,8,9]))
 // // Exercise 2. Write a function named rest() that takes an an array and returns an array containing everything except the first element.
-//
+function rest(arr){
+    var arrNew = [];
+    arr.shift()
+    arrNew.push(arr);
+    return arrNew;
+}
+
+console.log(rest(["blue", "green", "red", "orange"]));
+
 // // Exercise 3. Write a function named getLongestString that takes in an array of strings and returns the longest string of that array
-//
+function getLongestString(arr){
+    var maxstr = arr[0].length;
+    var ans = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+        var max = arr[i].length;
+        if (max > maxstr) {
+            ans = arr[i];
+            maxstr = max;
+        }
+    }
+    return ans;
+}
+
+    console.log(getLongestString(["long", "longer", "longest"]));
 // // Exercise 3.1 Write a function named getShortestString that takes in an array of strings and returns the shortest string in that array.
-//
+function getShortestString(arr){
+
+}
+    console.log(getLongestString(["long", "longer", "longest"]));
 // // Exercise 4. Write a function named addTwoArrays that takes in two, one dimensional arrays. The function should return a single array containing all of the elements of the first array along with all of the elements of the second array
 // // Example: addTwoArrays([1, 2, 3], [4, 5, 6]) should return [1, 2, 3, 4, 5, 6]
 //
