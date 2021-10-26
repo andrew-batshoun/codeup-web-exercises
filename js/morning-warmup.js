@@ -129,3 +129,40 @@ var mewTwo = {
     category: "genetic",
     abilities: "pressure",
 };
+
+//*****************OCTOBER 26****************
+//Create a function that accepts an array as an argument,
+// and that returns an array of objects that have a nationality property of “Canadian”.
+var wrestlers = [
+    {
+        name: "Bret Hart",
+        nationality: "Canadian"
+    }, {
+        name: "Shawn Michaels",
+        nationality: "American"
+    }, {
+        name: "Christian Cage",
+        nationality: "Canadian"
+    }, {
+        name: "Keiji Mutoh",
+        nationality: "Japanese"
+    }, {
+        name: "Eddy Guerrero",
+        nationality: "American"
+    }, {
+        name: "Owen Hart",
+        nationality: "Canadian"
+    }
+];
+
+function returnCanada(arr) {
+    var newArray = []
+    arr.forEach(function (wrestler) {
+        if (wrestler.nationality === "Canadian") {
+            newArray.push(wrestler);
+        }
+    });
+    return newArray;
+}
+
+console.log(returnCanada(wrestlers))

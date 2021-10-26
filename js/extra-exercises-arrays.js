@@ -117,7 +117,7 @@ console.log(listOfRolls(11));
 function listOfRollsFromDieFunc(numberOfRolls, diceFunction){
     var listArray = [];
     for(var i = 0; i < numberOfRolls; i++) {
-        listArray.push(diceFunction);
+        listArray.push(diceFunction());
     }return listArray;
 }
 console.log(listOfRollsFromDieFunc(5, twentySidedDie));
@@ -132,7 +132,10 @@ function first(array){
 }
 console.log(first([1, 2, 3, 4]));
 // // Exercise 1. Write a function named secondToLast() that returns the second to last element
-
+function secondToLast(array){
+    return array[array.length - 2];
+}
+console.log(secondToLast([1,2,3,4,5,6,7,8,9]))
 // // Exercise 2. Write a function named rest() that takes an an array and returns an array containing everything except the first element.
 //
 // // Exercise 3. Write a function named getLongestString that takes in an array of strings and returns the longest string of that array
