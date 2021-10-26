@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+ <h2>Register with us</h2>
+  <form method="POST" action="https://www.elformo.com/forms/d4d07e56-4a4e-4b61-9cec-cc5ddcd634cf">
+
+      <label for="email">Enter your Email</label>
+      <input id="email" type="text" name="email" placeholder="Enter your email address">
+      <br>
+
+      <label for="Password">Enter a password</label>
+      <input id="Password" type="password" name="password" placeholder="Enter your password">
+      <br>
+      <br>
+      <br>
+      <label for="bio">Bio</label>
+      <br>
+      <textarea name="bio" id="bio" cols="35" rows="15" placeholder="In a few words describe yourself."></textarea>
+      <br>
+      <br>
+      <h3>How did you find out about us?</h3>
+      <input type="checkbox" name="Question1" id="q1" value="billboard"><label for="q1" >Billboard</label>
+      <br>
+      <input type="checkbox" name="Question2" id="q2" value="radio advertisement"><label for="q2">Radio Advertisement</label>
+      <br>
+      <input type="checkbox" name="Question3" id="q3" value="internet advertisement"><label for="q3">Internet Advertisement</label>
+      <br>
+      <input type="checkbox" name="Question4" id="q4" value="other"><label for="q4">Other</label>
+      <br>
+
+<!-- What happens if the inputs are given different name attributes?
+Changing the name inputs allows for all the questions to be selected instead of individually, and you can't deselect it.
+-->
+      <br>
+      <label for="browser">What browser are you using? </label>
+      <select name="type of browser" id="browser">
+          <option disabled selected value> -- select an option -- </option>
+          <option value="IE">Internet Explorer</option>
+          <option value="chrome">Google Chrome</option>
+          <option value="firefox">Mozilla Firefox</option>
+          <option value="safari">Apple's Safari</option>
+      </select>
+      <br>
+      <br>
+      <button type="submit">Submit</button>
+<!--
+What do you notice when changing the form's request method from GET to POST?
+The data was sent to the URL
+
+What happens if you leave off the name attribute on an input?
+The information would not be sent.
+
+What happens if you leave off the id attribute on a form input?
+It will still submit the form
+
+
+-->
+  </form>
+</body>
+</html>
