@@ -166,3 +166,11 @@ function returnCanada(arr) {
 }
 
 console.log(returnCanada(wrestlers))
+
+//**************OCTOBER 27****************
+var circle = {
+    radius: 36
+}
+console.log(Math.round(Math.PI * (circle.radius ** 2)));
+
+// Find the area of the circle, and round it to the nearest whole number using the Math object.

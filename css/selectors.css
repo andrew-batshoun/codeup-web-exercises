@@ -1,0 +1,109 @@
+/* selector for id="container" */
+#container {
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+}
+
+/*  selector for all "h1" elements
+    that are a descendent of id="container"
+    and have a class of "fancy-header" */
+h1.fancy-header {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* selector for all "em" elements */
+em {
+    font-weight: bold;
+}
+
+/* selector for all elements with class="article" */
+.article {
+    clear: both;
+}
+
+/*  selector for all "anchor" elements
+    that are a direct child of an element with class="article" */
+.article > a {
+    float: right;
+}
+
+/*Below this comment is for part two of the exercise*/
+
+.fancy-header1 {
+    text-align: center;
+    color: crimson;
+}
+
+.fancy-header1 > h1 {
+    text-decoration: underline;
+}
+
+.fancy-header1 > p {
+    color: black;
+}
+
+.welomebody {
+    background: lightcyan;
+    background-image: url("../img/veridian.png");
+    background-size: 45em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.liststyle > #ul1 {
+    list-style-type: decimal;
+}
+
+.liststyle > ol {
+    list-style-type: circle;
+}
+
+.liststyle > #ul2 {
+    list-style-type: lower-alpha;
+}
+
+.wholepage{
+    font-family: 'Rubik', sans-serif;
+}
+
+#tablestyle {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#tablestyle td, #tablestyle th {
+    border: 1px solid #DDD;
+    padding: 8px;
+}
+#tablestyle tr {
+    background-color: #f2f2f2;
+}
+#tablestyle tr:hover {
+    background-color: #DDD;
+}
+#tablestyle th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: lightcyan;
+    color: black;
+}
+#img1, #img2, #img3, #img4{
+    border-radius: 8px;
+    border: solid 3px black;
+    width: 30em;
+    height: 30em;
+    display: inline-table;
+}
+.h2only{
+    text-align: center;
+}
+
+#header{
+    position: center;
+    float: left;
+}
