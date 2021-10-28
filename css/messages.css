@@ -1,3 +1,11 @@
+:root {
+    --bg-info: #cddeff;
+    --text-info:#3c3496;
+    --bg-success: #cff3da;
+    --text-success: #479366;
+
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -7,8 +15,8 @@ body, html {
 }
 
 .message-info{
-    background-color: #cddeff;
-    color: #3c3496;
+    background-color: var(--bg-info);
+    color: var(--text-info);
     border: 1px solid lightgrey;
     border-radius: 5px;
     padding: .5em;
@@ -16,8 +24,8 @@ body, html {
 }
 
 .message-success{
-    background-color: #cff3da;
-    color: #479366;
+    background-color: var(--bg-success);
+    color: var(--text-success);
     border: 1px solid lightgrey;
     border-radius: 5px;
     padding: .5em;
