@@ -1,4 +1,96 @@
-.fancy-header {
-    color: purple;
+.fancy-header1 {
+    text-align: center;
+    color: crimson;
+}
+
+.fancy-header1 > h1 {
     text-decoration: underline;
+}
+
+.fancy-header1 > p {
+    color: black;
+}
+
+.welomebody {
+    background: lightcyan;
+    background-image: url("../img/veridian.png");
+    background-size: 45em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.liststyle > #ul1 {
+    list-style-type: decimal;
+}
+
+.liststyle > ol {
+    list-style-type: circle;
+}
+
+.liststyle > #ul2 {
+    list-style-type: lower-alpha;
+}
+
+.wholepage{
+    font-family: 'Rubik', sans-serif;
+}
+
+#tablestyle {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#tablestyle td, #tablestyle th {
+    border: 1px solid #DDD;
+    padding: 8px;
+}
+#tablestyle tr {
+    background-color: #f2f2f2;
+}
+#tablestyle tr:hover {
+    background-color: #DDD;
+}
+#tablestyle th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: lightcyan;
+    color: black;
+}
+#img1, #img2, #img3, #img4{
+    border-radius: 8px;
+    border: solid 3px black;
+    width: 30em;
+    height: 30em;
+    display: inline-table;
+}
+.h2only{
+    text-align: center;
+}
+
+#header{
+    position: center;
+    float: left;
+}
+
+
+a:link {
+    color: red;
+}
+
+
+a:visited {
+    color: green;
+}
+
+
+a:hover {
+    color: hotpink;
+}
+
+
+a:active {
+    color: blue;
 }
