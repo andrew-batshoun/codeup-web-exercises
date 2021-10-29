@@ -1,0 +1,43 @@
+body{
+    background-color: lightcyan;
+}
+
+#topbread{
+    background-color: sandybrown;
+    height: fit-content ;
+    width: fit-content ;
+    padding: 1px;
+    border-radius: 10%;
+}
+
+#jelly{
+    color: lightblue;
+    background-color:purple;
+    height: fit-content ;
+    width: content-box ;
+    padding: 1px;
+    border-radius: 10%;
+}
+
+#peanutbutter{
+    color: lightblue;
+    background-color: saddlebrown;
+    height: fit-content ;
+    width: content-box ;
+    padding: 1px;
+    border-radius: 10%;
+}
+
+#bottombread{
+    background-color: sandybrown;
+    height: fit-content ;
+    width: content-box ;
+    padding: 1px;
+    border-radius: 10%;
+}
+
+.recipe-container{
+    border: 3px solid blue;
+    width: 30%;
+    margin: 10px auto;
+}
