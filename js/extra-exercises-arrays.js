@@ -235,23 +235,51 @@ console.log(getIndexesOf("a", "banana"));
 // // output array
 // // Example: removeAll([1, 2, 3], 2) should return [1, 3]
 // // Example 2: removeAll([2, 2, 3, 4, 5, 2, 2], 2) should return [3, 4, 5]
-function removeAll(){
 
-}
+
+console.log(removeAll([1, 2, 3], 3));
 
 // // Exercise 10. Write a function named firstTenFibonacciNumbers() that returns an array of the first ten fibonacci numbers
-//
+function firstTenFibonacciaNumbers(){
+    return [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,];
+}
+console.log(firstTenFibonacciaNumbers());
 // // Exercise 11. Write a function named getNFibonacci(n) that returns an array containing the first n fibonacci numbers
-//
+function getNFibonaccia(n) {
+    let n1 = 0, n2 = 1;
+    let fibArr = [];
+    for (let i = 1; i <= n; i++) {
+        fibArr.push(n1);
+        var nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+    } return fibArr
+}
+console.log(getNFibonaccia(15));
+
 // // Exercise 12. Write a function named moveFirstToLast() that takes in an array
 // // the function should return the array with the first element at the end
 // // Example: moveFirstToLast([1, 2, 3, 4]) should return [2, 3, 4, 1]
-//
-//
+function moveFirstToLast(arr){
+    let b = arr.shift()
+    arr.push(b)
+    return arr;
+}
+console.log(moveFirstToLast([1, 2, 3, 4, 5]));
 // // Exercise 13. Write a function named zip() that takes in two arrays with the same number of elements
 // // Zip returns a new array of arrays where each element is an array of the two elements at the same index
 // // Example: zip([1, 2, 3], [4, 5, 6]) returns [[1, 4], [2, 5], [3, 6])
 // // Example: zip(["a", "b", "c"], ["x", "y", "z"]) returns [["a", "x"], ["b", "y"], ["c", "z"]]
-
+    function zip(arr1, arr2) {
+        let pairArr = [];
+            for(var i = 0; i < arr1.length; i++){
+                if (arr1.length === arr2.length){
+                    let pairs = [arr1[i],arr2[i]];
+                    var pair1 = pairs.join();
+                    pairArr = pair1.split();
+                } return pairArr;
+            }
+    }
+    console.log(zip([1, 2, 3, 4], [1, 2, 3, 4]));
 
 })();
