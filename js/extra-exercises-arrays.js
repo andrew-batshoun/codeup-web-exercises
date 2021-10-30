@@ -272,12 +272,14 @@ console.log(moveFirstToLast([1, 2, 3, 4, 5]));
         let pairArr = [];
             for(var i = 0; i < arr1.length; i++){
                 if (arr1.length === arr2.length){
-                    let pairs = [arr1[i],arr2[i]];
-                    var pair1 = pairs.join();
-                    pairArr = pair1.split();
-                } return pairArr;
-            }
+                    pairArr[i] = [arr1[i],arr2[i]];
+
+
+                }
+            }return pairArr;
     }
+
+
     console.log(zip([1, 2, 3, 4], [1, 2, 3, 4]));
 
 })();
