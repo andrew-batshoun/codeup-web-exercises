@@ -174,3 +174,45 @@ var circle = {
 console.log(Math.round(Math.PI * (circle.radius ** 2)));
 
 // Find the area of the circle, and round it to the nearest whole number using the Math object.
+
+//*************************NOVEMBER 2***********************
+// Create a function that takes in an array of objects, and returns the object with the highest quantity property.
+//
+    var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
+//
+// Ex. getHighestQuantityObject(groceries)//returns {name: “yams”, quantity: 50};
+function getHighestQuantityObject(arr) {
+    var obj = {
+        name: "something",
+        quantity: 0
+    }
+    arr.forEach(function(el) {
+        if(el.quantity > obj.quantity) {
+            obj = el;
+        }
+        console.log(obj);
+    });
+    return obj;
+}
+
+console.log(getHighestQuantityObject(groceries));
