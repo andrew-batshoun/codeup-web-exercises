@@ -4,6 +4,8 @@
 
 body {
     margin: 0;
+    padding: 0
+    font-family: 'Work Sans', sans-serif;
 }
 
 nav {
@@ -15,13 +17,14 @@ ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    font-family: 'Work Sans', sans-serif;
     display: inline-block;
     padding: 1em;
 
@@ -31,14 +34,19 @@ nav a:hover {
     background: blue;
 }
 
-nav ul li:nth-child(5) {
+#logo>a {
     font-family: 'Montserrat', sans-serif;
-    /*padding: .2em 0;*/
-    margin: 0 auto;
-    /*font-size: 3em;*/
-
+    padding: .2em;
+    font-size: 3em;
+    position: absolute;
+    top: -18px;
+    left: calc(50% - 82.219px);
 }
 
+#logo{
+    margin: auto;
+
+}
 nav ul li:nth-child(6) {
     margin-left: auto;
 }
