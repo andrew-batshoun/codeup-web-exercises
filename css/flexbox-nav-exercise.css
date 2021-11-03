@@ -8,7 +8,6 @@ body {
 
 nav {
     background: rgb(193, 193, 193);
-    height: 3em;
 }
 
 ul {
@@ -16,9 +15,6 @@ ul {
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: flex-start;
-    height: auto;
-    justify-content: space-around;
 
 }
 
@@ -28,24 +24,21 @@ nav a {
     font-family: 'Work Sans', sans-serif;
     display: inline-block;
     padding: 1em;
-    align-items: center;
-    justify-content: space-around;
 
 }
 
 nav a:hover {
     background: blue;
 }
-nav ul li:nth-child(5){
+
+nav ul li:nth-child(5) {
     font-family: 'Montserrat', sans-serif;
-    padding: .2em 0;
-    margin: auto;
-
-
-
-
+    /*padding: .2em 0;*/
+    margin: 0 auto;
+    /*font-size: 3em;*/
 
 }
+
 nav ul li:nth-child(6) {
     margin-left: auto;
 }
