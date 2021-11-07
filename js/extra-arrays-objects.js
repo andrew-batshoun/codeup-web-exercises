@@ -68,33 +68,43 @@ console.log(filterNumbers(["fred", true, 5, 3]));
         }
     ]
 function getOlder(arr){
-
+ var newObj= {
+     name:"name",
+     breed:"breed",
+     age:0
+ }
+ arr.forEach(function (a){
+     a.age++;
+     newObj = a;
+     console.log(newObj)
+ });
+ return newObj;
 }
-console.log(getOlder(dogs));
+getOlder(dogs);
 // Write a function, washCars() that takes in a array of car objects and sets the boolean properties of isDirty to false.
 //
 //     Example input:
 //
-//     [
-//         {
-//             make: 'Volvo',
-//             color: 'red',
-//             year: 1996,
-//             isDirty: true
-//         },
-//         {
-//             make: 'Toyota',
-//             color: 'black',
-//             year: 2004,
-//             isDirty: false
-//         },
-//         {
-//             make: 'Ford',
-//             color: 'white',
-//             year: 2007,
-//             isDirty: true
-//         }
-//     ]
+   var cars = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ]
 // Example output
 //
 //     [
@@ -117,24 +127,39 @@ console.log(getOlder(dogs));
 //             isDirty: false // changed to false
 //         }
 //     ]
+function washCars(arr){
+    var obj = {
+        make:"string",
+        color:"string",
+        year:0,
+        isDirty:"boolean"
+    }
+    arr.forEach(function (a){
+        a.isDirty = false;
+        obj = a;
+        console.log(obj);
+    });
+    return obj;
+}
+washCars(cars);
 // Write a function, adminList() that takes in an array of user objects and returns a count of all admins based on the isAdmin property. Refactor to return an array of admin-only user emails. Refactor again to return an array of user objects that are admins.
 //
 //     Example Input:
 //
-//     [
-//         {
-//             isAdmin: true,
-//             email: 'user1@email.com'
-//         },
-//         {
-//             isAdmin: true,
-//             email: 'user2@email.com'
-//         }
-//         {
-//             isAdmin: false,
-//             email: 'user3@email.com'
-//         }
-//     ]
+var users =   [
+        {
+            isAdmin: true,
+            email: 'user1@email.com'
+        },
+        {
+            isAdmin: true,
+            email: 'user2@email.com'
+        },
+        {
+            isAdmin: false,
+            email: 'user3@email.com'
+        }
+    ]
 // Example Output (before refactor): 2
 //
 // Example Output (after 1st refactor):
@@ -155,6 +180,29 @@ console.log(getOlder(dogs));
 //         email: 'user2@email.com'
 //     }
 // ]
+// FIRST CODE
+// function adminList(arrUser){
+//     var adminArr = []
+//     arrUser.forEach(function (b){
+//         if(b.isAdmin === true){
+//             adminArr.push(b);
+//         }
+//     }); return adminArr.length;
+// }
+// console.log(adminList(users));
+
+//FIRST REFACTOR
+// function adminList(arrUser){
+//     var adminArr = []
+//     arrUser.forEach(function (c){
+//         if(c.isAdmin === true){
+//             adminArr.push(c.email);
+//         }
+//     }); return adminArr
+// }
+// console.log(adminList(users));
+
+
 // Create a function, makeSandwhichObjects() that takes in two array of strings, breads and fillings and returns an array of sandwhichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
 //
 //     Example Input:
