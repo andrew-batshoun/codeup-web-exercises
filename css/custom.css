@@ -1,0 +1,19 @@
+.jumbotron-fluid {
+    background-image: url("/img/pizza.png");
+    background-repeat: repeat-x;
+}
+
+
+.display-4 {
+    width: 100%;
+    text-align: center;
+    background-color: whitesmoke;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 650px) {
+    .jumbotron-fluid {
+        display: none;
+    }
+}
+
