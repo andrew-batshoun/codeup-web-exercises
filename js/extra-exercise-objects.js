@@ -1074,6 +1074,14 @@ function getActiveCount(){
 }
 console.log(getActiveCount());
 // //  getInactiveCount() should return the number of inactive profiles
+function getInactiveCount(){
+    var inActive = [];
+    profiles.forEach(function (a){
+        if(a.isActive === false){
+            inActive.push(a);
+        }
+    }); return inActive.length
+}
 // //  sumOfAllBalances() should return sum of the balance of all profiles
 // //  getAverageBalance() should return the average balance per users
 // //  getLowestBalance() should return the customer name with the lowest balance
