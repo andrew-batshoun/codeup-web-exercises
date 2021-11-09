@@ -1,17 +1,18 @@
 "use strict";
-(function (){
+(function () {
 //*********************OCTOBER 14**************
 //Write a function that returns the number 7.
 
-function returnSeven(){
-    return 7;
-}
-console.log(returnSeven())
+    function returnSeven() {
+        return 7;
+    }
+
+    console.log(returnSeven())
 //Write an if statement with a condition set to the boolean false.
 
-if(false){
-    console.log("It's false.");
-}
+    if (false) {
+        console.log("It's false.");
+    }
 
 //Does the condition run?
 //It does not run because the condition is not true.
@@ -43,10 +44,10 @@ typeCheck(!false * 3);
 typeCheck(4 + ‘4’);
  */
 
-function typeCheck(typeInput){
-    if(typeof typeInput === "string") {
+function typeCheck(typeInput) {
+    if (typeof typeInput === "string") {
         return 'haha, it\'s a string of a string';
-    } else{
+    } else {
         return typeof typeInput;
     }
 
@@ -55,7 +56,7 @@ function typeCheck(typeInput){
 console.log("input is an empty string: ", typeCheck(''))
 console.log("input isNan():", typeCheck(isNaN()))
 console.log("input is !false * 3", typeCheck(!false * 3))
-console.log("input is 4+4", typeCheck( 4 + '4'))
+console.log("input is 4+4", typeCheck(4 + '4'))
 
 //*********************OCTOBER 18****************
 // When writing code to test our tests in TDD it’s important to put yourself in the mindset of a (junior/senior) web developer. This will help you in ensuring that our tests are fully comprehensive.
@@ -71,12 +72,12 @@ console.log("input is 4+4", typeCheck( 4 + '4'))
 
 //Write a program that console.logs the numbers from 1 to 100. But for multiples of three console.log “Fizz” instead of the number and for the multiples of five console.log “Buzz”. For numbers which are multiples of both three and five console.log “FizzBuzz”.
 
-for (var i = 1; i <= 100; i++){
-    if(i % 5 === 0 && i % 3 === 0){
+for (var i = 1; i <= 100; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
         console.log(i + " FizzBuzz");
-    }else if (i % 3===0){
-        console.log(i +" Fizz");
-    }else if (i % 5===0){
+    } else if (i % 3 === 0) {
+        console.log(i + " Fizz");
+    } else if (i % 5 === 0) {
         console.log(i + "Buzz");
 
     }
@@ -88,10 +89,12 @@ for (var i = 1; i <= 100; i++){
 //**************** OCTOBER 20****************
 
 //Create a function named secondToLast that accepts an array as an argument and will return the second to last element of the array.
-var randomArrary = [ "one" , "two", "three", "four"]
-function secondToLast(arr){
-    return arr[arr.length - 2] ;
+var randomArrary = ["one", "two", "three", "four"]
+
+function secondToLast(arr) {
+    return arr[arr.length - 2];
 }
+
 console.log(secondToLast(randomArrary))
 
 //****************OCTOBER 21****************
@@ -102,7 +105,7 @@ console.log(secondToLast(randomArrary))
 // moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
 // moveToEnd([‘roll’, ‘rock’, ‘and’]  // returns [‘rock’, ‘and’, ‘roll’];
 
-function moveToEnd(arr){
+function moveToEnd(arr) {
     var removeFront = arr.shift()
     arr.push(removeFront)
     return arr;
@@ -178,23 +181,23 @@ console.log(Math.round(Math.PI * (circle.radius ** 2)));
 //*************************NOVEMBER 2***********************
 // Create a function that takes in an array of objects, and returns the object with the highest quantity property.
 //
-    var groceries = [
+var groceries = [
     {
         name: "carrots",
         quantity: 5
-    },{
+    }, {
         name: "yams",
         quantity: 50
-    },{
+    }, {
         name: "oranges",
         quantity: 9
-    },{
+    }, {
         name: "onions",
         quantity: 2
-    },{
+    }, {
         name: "cucumbers",
         quantity: 6
-    },{
+    }, {
         name: "potatoes",
         quantity: 8
     }
@@ -207,10 +210,9 @@ function getHighestQuantityObject(arr) {
         quantity: 0
     }
     arr.forEach(function(el) {
-        if(el.quantity > obj.quantity) {
+        if (el.quantity > obj.quantity) {
             obj = el;
         }
-        console.log(obj);
     });
     return obj;
 }
@@ -218,32 +220,32 @@ function getHighestQuantityObject(arr) {
 console.log(getHighestQuantityObject(groceries));
 
 //Write a function named ‘sortByName’ that takes in an array of objects, and returns an array of objects in alphabetical order based on the name property.
-   var products = [
-        {
-            name: 'Playstation 5',
-            price: 599.99
-        }, {
-            name: 'Logitech Wireless Mouse',
-            price: 23.99
-        }, {
-            name: 'Macbook Pro',
-            price: 1099.99
-        }, {
-            name: 'GoPro HERO10',
-            price: 399.99
-        }, {
-            name: '12" & 6" Metal Ruler Set',
-            price: 5.99
-        }]
+var products = [
+    {
+        name: 'Playstation 5',
+        price: 599.99
+    }, {
+        name: 'Logitech Wireless Mouse',
+        price: 23.99
+    }, {
+        name: 'Macbook Pro',
+        price: 1099.99
+    }, {
+        name: 'GoPro HERO10',
+        price: 399.99
+    }, {
+        name: '12" & 6" Metal Ruler Set',
+        price: 5.99
+    }]
 
-function sortByName(arr){
-    return arr.sort(function(a, b){
+function sortByName(arr) {
+    return arr.sort(function (a, b) {
         var aLower = a.name.toLowerCase();
         var bLower = b.name.toLowerCase();
 
-        if (aLower < bLower){
+        if (aLower < bLower) {
             return -1;
-        }else if (aLower > bLower){
+        } else if (aLower > bLower) {
             return 1;
         } else {
             return 0;
@@ -253,4 +255,42 @@ function sortByName(arr){
 
 
 }
+
 console.log(sortByName(products));
+
+//*************************NOVEMBER 9 *****************
+// Write a function in JavaScript that takes in an array of objects and returns the object with the lowest height property. Consider the following array to test your code.
+
+var bBallPlayers = [
+    {
+        name: "Hakeem Olajuwon",
+        height: 213
+    }, {
+        name: "Muggsy Bogues",
+        height: 160
+    }, {
+        name: "Chris Paul",
+        height: 183
+    }, {
+        name: "Bol Bol",
+        height: 218
+    }, {
+        name: "Moochie Norris",
+        height: 185
+    }, {
+        name: "Manu Ginobili",
+        height: 198
+    }
+];
+
+function lowestHeight(arr){
+    var box = {height: Number.MAX_VALUE}
+    arr.forEach(function (a){
+        if (a.height < box.height){
+            box = a;
+        }
+    });
+    return box;
+}
+
+console.log(lowestHeight(bBallPlayers));

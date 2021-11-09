@@ -1082,7 +1082,14 @@ function getInactiveCount(){
         }
     }); return inActive.length
 }
+console.log(getInactiveCount());
 // //  sumOfAllBalances() should return sum of the balance of all profiles
+function sumOfAllBalances(){
+var balance = 0;
+profiles.forEach(function (a){
+
+})
+}
 // //  getAverageBalance() should return the average balance per users
 // //  getLowestBalance() should return the customer name with the lowest balance
 // //  getHighestBalance() should return the customer name with the highest balance
