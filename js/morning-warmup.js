@@ -294,3 +294,48 @@ function lowestHeight(arr){
 }
 
 console.log(lowestHeight(bBallPlayers));
+
+//**************NOVEMBER 10*****************
+// Name your character object, and complete the attack method. The attack method
+// should use the myCharacter weapon object to deal damage to the enemy objects
+// hit points. When the attack method has been executed, the hit points of the
+// enemy object should reflect the damage done in the console.
+
+    var myCharacter = {
+    name: 'Bob',
+    hitPoints: 100,
+    class: 'Warrior',
+    abilities: {
+        attack: function(obj) {
+            console.log(myCharacter.name + " hit " + obj.name + " for " + myCharacter.weapon.damage + " damage!")
+            obj.hitPoints -= myCharacter.weapon.damage;
+            console.log(obj.name + " has " + obj.hitPoints + "  hit points left!")
+        },
+    },
+    magicPoints: 0,
+    weapon: {
+        name: 'Silver Sabre',
+        damage: 16,
+        type: 'sword'
+    }
+}
+
+var enemy = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+myCharacter.abilities.attack(enemy);
+
+
+// My solution, Jays solution is above
+// console.log(myCharacter.name + " sees " + enemy.name + " and attacks");
+//
+//
+//
+// console.log(" attack successful,"+ enemy.name + " takes " + myCharacter.weapon.damage + " damage. Enemy now has " + (enemy.hitPoints - myCharacter.weapon.damage));
