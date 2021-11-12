@@ -1101,33 +1101,62 @@ console.log(getInactiveCount());
 function sumOfAllBalances() {
     var balance = 0;
     for (var i = 0; i < profiles.length; i++) {
-         balance += Number(profiles[i].balance.replace(/[^0-9\.-]+/g, ""));
+        balance += Number(profiles[i].balance.replace(/[^0-9\.-]+/g, ""));
 
-    }return balance;
+    }
+    return balance;
 
 }
+
 console.log(sumOfAllBalances());
 
 // //  getAverageBalance() should return the average balance per users
-function getAverageBalance(){
+function getAverageBalance() {
     var balance = 0;
-    for(var i = 0; i < profiles.length; i++){
+    for (var i = 0; i < profiles.length; i++) {
         balance += Number(profiles[i].balance.replace(/[^0-9\.-]+/g, ""));
 
-    }return (balance / profiles.length).toFixed(2);
+    }
+    return (balance / profiles.length).toFixed(2);
 }
 
 console.log(getAverageBalance())
+
 // //  getLowestBalance() should return the customer name with the lowest balance
+
+// function getLowestBalance(arr) {
+//     var box = [];
+//     arr.forEach(function (a) {
+//         var noDollarSign = parseFloat(a.balance.replace("$", "").replace(",", ""));
+//         var nameAndBalance = {name: a.name, balance: noDollarSign};
+//         box.push(nameAndBalance);
+//     });
+//
+//     var min = Math.min(...box.map(box => box.balance));
+//
+//     var finalResult;
+//     box.forEach(function (b){
+//
+//         if(b.balance === min){
+//             finalResult = b;
+//         }
+//     }); return finalResult;
+// }
+// refactor #1
+function  getLowestBalance(arr){
+
+}
+
+console.log(getLowestBalance(profiles));
 // //  getHighestBalance() should return the customer name with the highest balance
 // //  getMostFavoriteFruit() should return the most common fruit
 // //  getLeastFavoriteFruit() should return the least favorite fruit
 // //  getTotalNumberOfUnreadMessages() should return the number of unread messages for all users
-// //  getAverageNumberOfUnreadMessages() should return the average number of unread mesages per user.
+// //  getAverageNumberOfUnreadMessages() should return the average number of unread messages per user.
 // //  getAverageAge() should return the average age of all users
 // //  getGenderCounts() should return gender count of users as an object: example {"m": 23, "f", 32}
 // //  getAllCompanyNames() should return an array of all companies represented by the users
-// //  getMostCommonEyeColor() should return the most commonly occuring eye-color.
+// //  getMostCommonEyeColor() should return the most commonly occurring eye-color.
 // //  getBalancesForActiveAndNonActive() should return the balance of all non-active accounts vs. the balance of all active accounts?
 // //     this last method should return an object that looks like {"active-balances": 23000, "inactive-balances": 4000} w/ different numbers.
 //
