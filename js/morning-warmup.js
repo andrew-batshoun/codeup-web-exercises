@@ -339,3 +339,13 @@ myCharacter.abilities.attack(enemy);
 //
 //
 // console.log(" attack successful,"+ enemy.name + " takes " + myCharacter.weapon.damage + " damage. Enemy now has " + (enemy.hitPoints - myCharacter.weapon.damage));
+
+//************NOVEMBER 12*************
+// Write a function in JavaScript that takes in an array, and returns a random element from the array.
+//
+// Ex. randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
+
+function randomElement(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+console.log(randomElement(["rock", "paper", "scissors", "lizard", "Spock"]));

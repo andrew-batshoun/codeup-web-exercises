@@ -1109,6 +1109,15 @@ function sumOfAllBalances() {
 console.log(sumOfAllBalances());
 
 // //  getAverageBalance() should return the average balance per users
+function getAverageBalance(){
+    var balance = 0;
+    for(var i = 0; i < profiles.length; i++){
+        balance += Number(profiles[i].balance.replace(/[^0-9\.-]+/g, ""));
+
+    }return (balance / profiles.length).toFixed(2);
+}
+
+console.log(getAverageBalance())
 // //  getLowestBalance() should return the customer name with the lowest balance
 // //  getHighestBalance() should return the customer name with the highest balance
 // //  getMostFavoriteFruit() should return the most common fruit
