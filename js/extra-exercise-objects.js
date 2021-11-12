@@ -171,31 +171,37 @@ console.log(salesReport);
 // // getEmployeeCount() should return the total number of employees
 // // getTotalNumberOfSales() should return the total number of units sold
 // // getAverageSalesPerEmployee() should return the average units sold per employee
-function getEmployeeCount(arr){
+function getEmployeeCount(arr) {
     var arrEmploy = [];
-    arr.forEach(function(a){
+    arr.forEach(function (a) {
         arrEmploy.push(a.employees);
-    }); return arrEmploy.length;
+    });
+    return arrEmploy.length;
 }
+
 console.log(getEmployeeCount(salesReport));
 
-function getTotalNumberOfSales(arr){
-   var totalSales = 0;
-   for (var i=0; i < arr.length; i++){
-       totalSales += arr[i].employees.salesUnit;
-   } return totalSales;
+function getTotalNumberOfSales(arr) {
+    var totalSales = 0;
+    for (var i = 0; i < arr.length; i++) {
+        totalSales += arr[i].employees.salesUnit;
+    }
+    return totalSales;
 
 }
+
 console.log(getTotalNumberOfSales(salesReport));
 
-function getAverageSalesPerEmployee(arr){
+function getAverageSalesPerEmployee(arr) {
     var totalSales = 0;
     var numberOfSales = arr.length;
-    for (var i=0; i < arr.length; i++){
+    for (var i = 0; i < arr.length; i++) {
         totalSales += arr[i].employees.salesUnit;
         var averageSales = totalSales / numberOfSales
-    } return averageSales;
+    }
+    return averageSales;
 }
+
 console.log(getAverageSalesPerEmployee(salesReport));
 // // Exercise 4. Go to https://gist.githubusercontent.com/ryanorsinger/f77e5ec94dbe14e21771/raw/d4a1f916723ca69ac99fdcab48746c6682bf4530/profiles.json
 // // then copy the JSON and assign it to a variable named profiles.
@@ -1055,41 +1061,53 @@ var profiles = [
         "greeting": "Hello, Ewing Larson! You have 16 unread messages.",
         "favoriteFruit": "strawberry"
     }
-] ;
+];
 // // Exercise 5. Create an object named profileReport and add the following methods that use the "profiles" JSON data.
 // //  getProfileCount() should return the total number of profiles
-function getProfileCount(){
+function getProfileCount() {
     return profiles.length
 }
+
 console.log(getProfileCount());
+
 // //  getActiveCount() should return the number of active profiles
-function getActiveCount(){
-   var active = [];
-    profiles.forEach(function (a){
-        if(a.isActive === true){
+function getActiveCount() {
+    var active = [];
+    profiles.forEach(function (a) {
+        if (a.isActive === true) {
             active.push(a);
         }
-    }); return active.length
+    });
+    return active.length
 
 }
+
 console.log(getActiveCount());
+
 // //  getInactiveCount() should return the number of inactive profiles
-function getInactiveCount(){
+function getInactiveCount() {
     var inActive = [];
-    profiles.forEach(function (a){
-        if(a.isActive === false){
+    profiles.forEach(function (a) {
+        if (a.isActive === false) {
             inActive.push(a);
         }
-    }); return inActive.length
+    });
+    return inActive.length
 }
-console.log(getInactiveCount());
-// //  sumOfAllBalances() should return sum of the balance of all profiles
-function sumOfAllBalances(){
-var balance = 0;
-profiles.forEach(function (a){
 
-})
+console.log(getInactiveCount());
+
+// //  sumOfAllBalances() should return sum of the balance of all profiles
+function sumOfAllBalances() {
+    var balance = 0;
+    for (var i = 0; i < profiles.length; i++) {
+         balance += Number(profiles[i].balance.replace(/[^0-9\.-]+/g, ""));
+
+    }return balance;
+
 }
+console.log(sumOfAllBalances());
+
 // //  getAverageBalance() should return the average balance per users
 // //  getLowestBalance() should return the customer name with the lowest balance
 // //  getHighestBalance() should return the customer name with the highest balance
