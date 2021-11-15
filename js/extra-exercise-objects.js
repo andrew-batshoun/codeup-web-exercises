@@ -1124,32 +1124,51 @@ console.log(getAverageBalance())
 
 // //  getLowestBalance() should return the customer name with the lowest balance
 
-// function getLowestBalance(arr) {
-//     var box = [];
-//     arr.forEach(function (a) {
-//         var noDollarSign = parseFloat(a.balance.replace("$", "").replace(",", ""));
-//         var nameAndBalance = {name: a.name, balance: noDollarSign};
-//         box.push(nameAndBalance);
-//     });
-//
-//     var min = Math.min(...box.map(box => box.balance));
-//
-//     var finalResult;
-//     box.forEach(function (b){
-//
-//         if(b.balance === min){
-//             finalResult = b;
-//         }
-//     }); return finalResult;
-// }
-// refactor #1
-function  getLowestBalance(arr){
+function getLowestBalance(arr) {
+    var box = [];
+    arr.forEach(function (a) {
+        var noDollarSign = parseFloat(a.balance.replace("$", "").replace(",", ""));
+        var nameAndBalance = {name: a.name, balance: noDollarSign};
+        box.push(nameAndBalance);
+    });
 
+    var min = Math.min(...box.map(box => box.balance));
+
+    var finalResult;
+    box.forEach(function (b){
+
+        if(b.balance === min){
+            finalResult = b;
+        }
+    }); return finalResult;
 }
 
 console.log(getLowestBalance(profiles));
+
 // //  getHighestBalance() should return the customer name with the highest balance
+function getHighestBalance(arr) {
+    var box = [];
+    arr.forEach(function (a) {
+        var noDollarSign = parseFloat(a.balance.replace("$", "").replace(",", ""));
+        var nameAndBalance = {name: a.name, balance: noDollarSign};
+        box.push(nameAndBalance);
+
+    });
+    var max = Math.max(...box.map(box => box.balance));
+
+    var finalResult;
+    box.forEach(function (b){
+
+        if(b.balance === max){
+            finalResult = b;
+        }
+    }); return finalResult;
+
+}
+
+console.log(getHighestBalance(profiles));
 // //  getMostFavoriteFruit() should return the most common fruit
+
 // //  getLeastFavoriteFruit() should return the least favorite fruit
 // //  getTotalNumberOfUnreadMessages() should return the number of unread messages for all users
 // //  getAverageNumberOfUnreadMessages() should return the average number of unread messages per user.
