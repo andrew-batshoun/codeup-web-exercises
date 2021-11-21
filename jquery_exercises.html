@@ -7,7 +7,9 @@
 </head>
 <body>
 <h1 id="title">Hi, I am a h1 element.</h1>
-<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem illo natus officiis tempore voluptatem! Ab aut blanditiis distinctio dolorem enim exercitationem, hic ipsum, magnam mollitia nesciunt optio quaerat quasi quo!</p>
+<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem illo natus officiis tempore
+    voluptatem! Ab aut blanditiis distinctio dolorem enim exercitationem, hic ipsum, magnam mollitia nesciunt optio
+    quaerat quasi quo!</p>
 <h3 id="list-title">Random List</h3>
 <ul class="codeup">
     <li>I am part of this list.</li>
@@ -20,8 +22,45 @@
 
 <!--Script files: bootstrap, jquery, js file-->
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-<script src="js/jquery_exercises.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+    $(document).ready(function () {
+//Use the same id on 2 elements. How does this change the jQuery selection?
+        // It only shows the first element.
+
+// var contents = $('#title').html();
+// alert(contents);
+
+//Give another element an id of codeup. Does this element get a border now?
+        //No, because only the class is selected not the id.
+
+// $('.codeup').css('border', '1px solid red');
+
+// $('li').css('font-size','20px')
+// $('h1, p, li').css('background-color', '#FF0');
+// alert($('h1').html());
+
+        $('h1').click(function () {
+            $('h1').css('background', 'blue');
+        });
+
+        $('p').dblclick(function () {
+            $('p').css('font-size', '18px');
+        });
+
+        $('li').hover(function () {
+                $('li').css('color', 'red');
+            }, function () {
+                $('li').css('color', 'black');
+            });
+
+    });
+    console.log($('p').css('font-size'));
+</script>
 </body>
 </html>
