@@ -10,15 +10,26 @@ wholePage.addEventListener("keypress", function (e) {
 });
 
 var count = 0
-wholePage.addEventListener('keydown', function (e) {
+wholePage.addEventListener('keyup', function (e) {
     if (e.code === "Enter") {
         count++
     }
-    counter.innerHTML = "You have pressed enter: " + count +  ' times';
+    counter.innerHTML = "You have pressed enter: " + count + ' times';
 });
 
+var pattern = ['1', '2', '3'];
+current = 0
 wholePage.addEventListener("keypress", function (e) {
-    if (e.key === 1  ) {
+
+    if(!pattern.includes(e.key) || e.key !== pattern[current]){
+        current = 0;
+        return;
+    }
+    current++;
+    if (pattern.length === current){
         alert("You get a 50% discount!");
     }
+
+
+
 });
