@@ -209,7 +209,7 @@ function getHighestQuantityObject(arr) {
         name: "something",
         quantity: 0
     }
-    arr.forEach(function(el) {
+    arr.forEach(function (el) {
         if (el.quantity > obj.quantity) {
             obj = el;
         }
@@ -283,10 +283,10 @@ var bBallPlayers = [
     }
 ];
 
-function lowestHeight(arr){
+function lowestHeight(arr) {
     var box = {height: Number.MAX_VALUE}
-    arr.forEach(function (a){
-        if (a.height < box.height){
+    arr.forEach(function (a) {
+        if (a.height < box.height) {
             box = a;
         }
     });
@@ -301,12 +301,12 @@ console.log(lowestHeight(bBallPlayers));
 // hit points. When the attack method has been executed, the hit points of the
 // enemy object should reflect the damage done in the console.
 
-    var myCharacter = {
+var myCharacter = {
     name: 'Bob',
     hitPoints: 100,
     class: 'Warrior',
     abilities: {
-        attack: function(obj) {
+        attack: function (obj) {
             console.log(myCharacter.name + " hit " + obj.name + " for " + myCharacter.weapon.damage + " damage!")
             obj.hitPoints -= myCharacter.weapon.damage;
             console.log(obj.name + " has " + obj.hitPoints + "  hit points left!")
@@ -345,7 +345,19 @@ myCharacter.abilities.attack(enemy);
 //
 // Ex. randomEl([“rock”, “paper”, “scissors”, “lizard”, “Spock”]) // returns an element from the array.
 
-function randomElement(arr){
+function randomElement(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+
 console.log(randomElement(["rock", "paper", "scissors", "lizard", "Spock"]));
+
+//**************NOVEMBER 22 2021******************
+// You are in charge of adding form validation for the login page for a contract position. Navigate to your login-form.html file in codeup-web-exercises, write your code in an inline script.
+
+// Below is the username and password we would like you to test with.
+
+var username = 'regulus2021';
+var password = 'gocodeup';
+
+
+// If the user enters in the wrong username or password, add a small text element under the password input field that reads “We’re sorry, your username or password is incorrect. Please try again.”

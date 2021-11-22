@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        #warning{
+            color: red;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <main>
@@ -11,15 +17,42 @@
         <fieldset class="width-80">
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" name="username" class="form-control">
+                <input type="text" id="username" name="username" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <input type="password" id="password" name="password" class="form-control" >
             </div>
-            <button class="btn btn-block">Login</button>
+            <small id="warning">We’re sorry, your username or password is incorrect. Please try again.</small>
+            <br>
+            <br>
+            <button class="btn btn-block click-me">Login</button>
         </fieldset>
     </form>
 </main>
 </body>
+<script>
+    "use strict";
+    (function () {
+        var username = 'regulus2021';
+        var password = 'gocodeup';
+        var message = document.querySelector('#warning');
+        var userinput = document.querySelector('#username');
+        var passinput = document.querySelector('#password');
+        var submit = document.querySelector('.click-me')
+
+        submit.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (username !== userinput.value || password !== passinput.value) {
+                message.style.display = "inline-block";
+            }else{
+                message.style.color = 'green';
+                message.style.display = 'block';
+                message.innerHTML = 'Hello ' + username;
+
+            }
+        });
+
+    })();
+</script>
 </html>
