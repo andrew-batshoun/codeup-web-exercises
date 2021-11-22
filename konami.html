@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Konami Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        * {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .characters {
+            font-size: 30px;
+            text-align: center;
+            border: black 2px solid;
+            width: 20%;
+            margin: 2em auto;
+            display: none;
+
+        }
+
+        .float-right {
+            margin-right: 1em;
+            display: none;
+        }
+
+        iframe {
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center" class="text-center">THE CAKE IS A LIE!</h1>
+<div class="characters"></div>
+<button type="button" class="btn btn-outline-light btn-sm float-right">Click Here to Experience The Past</button>
+<p align="center">
+    <iframe src="https://www.retrogames.cc/embed/16841-contra-usa.html" width="600" height="450" frameborder="no"
+            allowfullscreen="true"
+            webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+</p>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous">
+
+</script>
+<script>
+    "use strict";
+
+    $(document).ready(function () {
+        var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+            'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        var count = 0;
+        var audio = new Audio('mp3/tindeck_1.mp3')
+
+
+        $(document).keydown(function (e) {
+            console.log(e.key)
+            $('.characters').css('display', 'block')
+            $('.characters').html(e.key)
+
+            if (!pattern.includes(e.key) || e.key !== pattern[count]) {
+                count = 0;
+                return;
+            }
+            count++;
+            console.log(count)
+            if (pattern.length === count) {
+                $('h1').css('display', 'none');
+                $('.characters').css('display', 'none');
+                audio.play();
+                alert("YOU HAVE ADDED 30 LIVES!");
+                $('body').css({
+                    'background-image': "url('img/contra.jpeg')",
+                    'background-size': 'cover',
+                    'background-repeat': 'no-repeat',
+                    'background-color': 'black'
+                });
+                $('.float-right').css({
+                    'display': 'block',
+                });
+            }
+            $('.float-right').click(function () {
+                $('iframe').css('display', 'block');
+                $('.float-right').css('display', 'none');
+            });
+        });
+
+
+    });
+
+</script>
+</body>
+</html>
