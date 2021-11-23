@@ -1,0 +1,58 @@
+
+.btn-outline-warning,
+.btn-outline-warning:hover,
+.btn-outline-warning:focus {
+    color: darkorange;
+    text-shadow: #479366;
+
+}
+
+
+html,
+body {
+    height: 100%;
+    background-image: url("/img/boxing-ring.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    color: black;
+    /*text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);*/
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+h1 {
+    color: orangered;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+h2 {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+h5 {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.box1 {
+    border: 2px solid rosybrown;
+    background-image: linear-gradient(lightsteelblue, white, lightpink);
+}
+
+.cover-container {
+    max-width: 42em;
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
