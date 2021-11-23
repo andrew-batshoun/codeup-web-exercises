@@ -3,14 +3,17 @@
 
 <head>
     <title>Konami Code</title>
+    <!--Links for google fonts and bootstrap css-->
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!--inline stylesheet-->
     <style>
+        /*changes all fonts*/
         * {
             font-family: 'Oswald', sans-serif;
         }
-
+        /*styling for the keys pressed on screen*/
         .characters {
             font-size: 30px;
             text-align: center;
@@ -20,12 +23,12 @@
             display: none;
 
         }
-
+        /*button*/
         .float-right {
             margin-right: 1em;
             display: none;
         }
-
+        /*embedded video game*/
         iframe {
             display: none;
 
@@ -34,62 +37,89 @@
 </head>
 
 <body>
+<!-- h1 title-->
 <h1 align="center" class="text-center">THE CAKE IS A LIE!</h1>
+
+<!--div for keys to show on screen-->
 <div class="characters"></div>
+
+<!--submit button that is hidden till after code is input then hides again when clicked-->
 <button type="button" class="btn btn-outline-light btn-sm float-right">Click Here to Experience The Past</button>
+
+<!--embedded game from website retro games it is put in p element to center on page-->
 <p align="center">
     <iframe src="https://www.retrogames.cc/embed/16841-contra-usa.html" width="600" height="450" frameborder="no"
             allowfullscreen="true"
             webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
 </p>
 
+<!--script for jquery-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
-
 </script>
+
+<!--script for bootstrap-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous">
-
 </script>
+
+<!--embedded script-->
 <script>
     "use strict";
 
     $(document).ready(function () {
-        var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
+        // pattern of keys input
+        var keyArray = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight',
             'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        // counter
         var count = 0;
+        // audio file of sound
         var audio = new Audio('mp3/tindeck_1.mp3')
 
 
         $(document).keydown(function (e) {
             console.log(e.key)
+            //the character class is displayed and shows key input on screen
             $('.characters').css('display', 'block')
             $('.characters').html(e.key)
 
-            if (!pattern.includes(e.key) || e.key !== pattern[count]) {
+            // if the key is not in the array or if the key pressed
+            // doesn't follow the array order then the counter resets to zero
+            if (!keyArray.includes(e.key) || e.key !== keyArray[count]) {
                 count = 0;
                 return;
             }
+            // count continues when correct keys are pressed
             count++;
             console.log(count)
-            if (pattern.length === count) {
+            // if the pattern length equals the count value
+            if (keyArray.length === count) {
+                // h1 is not displayed
                 $('h1').css('display', 'none');
+                //character class is not displayed
                 $('.characters').css('display', 'none');
+                // audio variable is play
                 audio.play();
+                //alerts user
                 alert("YOU HAVE ADDED 30 LIVES!");
+                //The background image is changed
                 $('body').css({
                     'background-image': "url('img/contra.jpeg')",
                     'background-size': 'cover',
                     'background-repeat': 'no-repeat',
                     'background-color': 'black'
                 });
+                // button is displayed
                 $('.float-right').css({
                     'display': 'block',
                 });
             }
+            //click event occurs when button is clicked
             $('.float-right').click(function () {
+                // embedded game is displayed
                 $('iframe').css('display', 'block');
+                //button is hidden
                 $('.float-right').css('display', 'none');
             });
         });
