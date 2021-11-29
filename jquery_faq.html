@@ -82,8 +82,9 @@
         $('#toggle-me').click(function () {
             $('dd').toggleClass("invisible");
         });
+
         $('dt').click(function (){
-           $('dt').addClass('highlight');
+           $(this).toggleClass('highlight');
         });
     });
 </script>
