@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>National Parks</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin: 1em;
+        }
+        .highlight{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+<h3>National Parks Facts</h3>
+
+<dl>
+    <dt>Yosemite National Park</dt>
+    <dd class="invisible">Three of the 10 highest waterfalls in the world are located in Yosemite National Park in
+        California.
+    </dd>
+
+    <dt>Grand Canyon</dt>
+    <dd class="invisible">The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven
+        Natural Wonders of the
+        World.
+    </dd>
+
+    <dt>Sequoia National Park</dt>
+    <dd class="invisible">California's Sequoia National Park is home to the largest living single-stem tree in the
+        world, the wonderfully
+        named General Sherman. The tree is approximately 275 feet tall and weighs approximately 1,900 metric tons.
+    </dd>
+
+    <dt>Wrangell-St. Elais National Park</dt>
+    <dd class="invisible">Located in Alaska, is the largest national park, covering 13,000 square miles or 13.2 million
+        acres.
+    </dd>
+
+    <dt>Great Smoky Mountain National Park</dt>
+    <dd class="invisible">It is the most visited park with mor ethan 9 Million guests per year</dd>
+
+    <dt>Kobuk Valley national Park</dt>
+    <dd class="invisible">It is the least visited park, it receives just 3000 visitors per year.</dd>
+
+    <dt>Carlsbad Caverns National Park</dt>
+    <dd class="invisible">It is home to the Nation's deepest cave.</dd>
+
+    <dt>Glacier National Park</dt>
+    <dd class="invisible">There are 25 active glaciers and more than 700 lakes of various sizes.</dd>
+
+    <dt>Mauna Loa Volcano in Hawaii Volcanoes National Park</dt>
+    <dd class="invisible">The largest volcano on earth both in terms of volume and height above its base. It contains
+        about 19,000 cubic miles of lava and rises more than 50,000 feet above its base, including the portion which is
+        beneath the ocean.
+    </dd>
+
+    <dt>Olympic National Park</dt>
+    <dd class="invisible">Bears have not killed a single person in the park, but a mountain goat, which is not a native
+        species to the region, killed a man in 2010.
+    </dd>
+
+</dl>
+
+<a href="#" id="toggle-me">Click to view the facts.</a>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#toggle-me').click(function () {
+            $('dd').toggleClass("invisible");
+        });
+        $('dt').click(function (){
+           $('dt').addClass('highlight');
+        });
+    });
+</script>
+</body>
+</html>

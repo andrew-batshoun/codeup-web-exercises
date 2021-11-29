@@ -13,7 +13,7 @@ $(document).ready(function () {
     playersChoices.forEach(function (option) {
         option.click(function () {
             var playerPick = this.textContent;
-            //the computers choices in array
+            //the computer's choices in array
             var computerChoices = ['ROCK', 'PAPER', 'SCISSORS'];
             //the choices randomized
             var computerPick = computerChoices[Math.floor(Math.random() * 3)];
