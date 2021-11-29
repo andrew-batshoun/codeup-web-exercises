@@ -28,24 +28,31 @@ $(document).ready(function () {
     //compares the computer random pick vs the users choices
     function compare(playerPick, computerPick) {
         if (playerPick === computerPick) {
+            alert("Computer chooses " + computerPick);
             alert('Draw!');
 
         } else if ((playerPick === "ROCK") && (computerPick === "SCISSORS")) {
+            alert("Computer chooses " + computerPick);
             alert("Player won!");
              playerScore++;
         } else if ((playerPick === "PAPER") && (computerPick === "ROCK")) {
+            alert("Computer chooses " + computerPick);
             alert("Player won!");
             playerScore++;
         } else if ((playerPick === "SCISSORS") && (computerPick === "PAPER")) {
+            alert("Computer chooses " + computerPick);
             alert("Player won!");
             playerScore++;
         } else if ((playerPick === "PAPER") && (computerPick === "SCISSORS")) {
+            alert("Computer chooses " + computerPick);
             alert("Computer won!");
              computerScore++;
         } else if ((playerPick === "SCISSORS") && (computerPick === "ROCK")) {
+            alert("Computer chooses " + computerPick);
             alert("Computer won!");
             computerScore++;
         } else if ((playerPick === "ROCK") && (computerPick === "PAPER")) {
+            alert("Computer chooses " + computerPick);
             alert("Computer won!");
             computerScore++;
         }
