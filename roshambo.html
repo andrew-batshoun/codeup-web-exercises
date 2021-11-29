@@ -23,9 +23,9 @@
         <h1 class="cover-heading">CHOOSE YOUR WEAPON</h1>
         <!--buttons for rock, paper, and scissors. Put in p element to center and sit side by side -->
         <p>
-            <button type="button" class="btn btn-outline-warning btn-lg" id="rock">ROCK</button>
-            <button type="button" class="btn btn-outline-warning btn-lg" id="paper">PAPER</button>
-            <button type="button" class="btn btn-outline-warning btn-lg" id="scissors">SCISSORS</button>
+            <button type="button" class="btn btn-outline-warning btn-lg player-choice" id="rock">ROCK</button>
+            <button type="button" class="btn btn-outline-warning btn-lg player-choice" id="paper">PAPER</button>
+            <button type="button" class="btn btn-outline-warning btn-lg player-choice" id="scissors">SCISSORS</button>
         </p>
         <!--container for middle section. Player vs computer -->
         <div class="container w-100">
@@ -34,7 +34,7 @@
                 <div class="col box1 d-flex flex-column align-items-center">
                     <!--main card contains player vs computer img-->
                     <div class="media text-left">
-                        <img src="img/player.png" height="65" width="65"class="mr-3" alt="...">
+                        <img src="img/player.png" height="65" width="65" class="mr-3" alt="...">
                         <div class="media-body">
                             <h5 class="mt-0">PLAYER</h5>
 
@@ -46,6 +46,7 @@
 
                     </div>
                     <br>
+                    <!--robot image -->
                     <div class="media text-left">
                         <img src="img/angry_robot.jpeg" height="65" width="65" class="mr-3" alt="robot">
                         <div class="media-body">
@@ -53,61 +54,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm box2">
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                         aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">RESULTS</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--display results-->
                 <br>
                 <div class="col-sm">
-                    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-                        <table class="table table-sm table-dark">
-                            <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">PLAYER</th>
-                                <th scope="col">COMPUTER</th>
-                                <th scope="col">WINNER</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            </tbody>
-                        </table>
-
+                    <div class="score d-flex justify-content-between">
+                        <div class="playerScore">
+                            <h2>Player</h2>
+                            <span id="p-count" class="count">0</span>
+                        </div>
+                        <div class="computerScore">
+                            <h2>Computer</h2>
+                            <span id="c-count" class="count">0</span>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
 
     </main>
 

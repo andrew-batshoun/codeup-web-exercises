@@ -31,10 +31,16 @@ h1 {
 
 h2 {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    color: white;
+    text-decoration: underline;
 }
 
 h5 {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.count {
+    color: skyblue;
 }
 
 .box1 {
@@ -50,6 +56,9 @@ h5 {
     display: flex;
     justify-content: center;
 }
+
+
+
 
 
 
