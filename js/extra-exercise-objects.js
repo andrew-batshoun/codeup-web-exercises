@@ -1190,7 +1190,7 @@ console.log(getHighestBalance(profiles));
 //
 //
 // // Exercise 7. More practice with assignment by reference
-// // Add the following HTML to your index.html page in this project.
+// // Add the following HTML to your ajax-blog.html page in this project.
 // // <input type="text" id="input" name="input">
 // // now, create a variable named input and assign it document.getElementById("input").
 // // now run input.value = "Hello" from the JS console. Did you see any HTML change?
