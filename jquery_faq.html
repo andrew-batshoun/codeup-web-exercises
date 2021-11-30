@@ -15,43 +15,73 @@
         dd {
             margin: 1em;
         }
-        .highlight{
+
+        .highlight {
             background-color: yellow;
+        }
+
+
+        .row {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-around;
+
+
+        }
+
+        .img-holder {
+            border: 2px red solid;
+            height: 300px;
+            width: 300px;
+            margin: 1em;
+        }
+
+        .frame1 {
+            background-image: url("/img/pixel_mario.png");
+            background-size: contain;
+            background-color: blue;
+        }
+
+        .frame2 {
+            background-image: url("/img/luigi_pixel.png");
+            background-size: contain;
+
+        }
+
+        .frame3 {
+            background-image: url("/img/yoshi_pixel.jpeg");
+            background-size: contain;
         }
 
     </style>
 </head>
 <body>
-<h3>National Parks Facts</h3>
+<h3>National Parks FAQ</h3>
 
 <dl>
-    <dt>Yosemite National Park</dt>
-    <dd class="invisible">Three of the 10 highest waterfalls in the world are located in Yosemite National Park in
-        California.
+    <dt>Three of the 10 highest waterfalls in the world are located in what park?</dt>
+    <dd class="invisible">Yosemite National Park
     </dd>
 
-    <dt>Grand Canyon</dt>
-    <dd class="invisible">The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven
-        Natural Wonders of the
-        World.
+    <dt>What park in Arizona is known as on of the seven natural wonders of the World?</dt>
+    <dd class="invisible">The Grand Canyon.
     </dd>
 
-    <dt>Sequoia National Park</dt>
-    <dd class="invisible">California's Sequoia National Park is home to the largest living single-stem tree in the
-        world, the wonderfully
-        named General Sherman. The tree is approximately 275 feet tall and weighs approximately 1,900 metric tons.
+    <dt>Where is home to the largest living single-stem tree in the
+        world?
+    </dt>
+    <dd class="invisible">California's Sequoia National Park
     </dd>
 
-    <dt>Wrangell-St. Elais National Park</dt>
-    <dd class="invisible">Located in Alaska, is the largest national park, covering 13,000 square miles or 13.2 million
-        acres.
+    <dt>What is the largest National Park</dt>
+    <dd class="invisible">Wrangell-St. Elais National Park
     </dd>
 
-    <dt>Great Smoky Mountain National Park</dt>
-    <dd class="invisible">It is the most visited park with mor ethan 9 Million guests per year</dd>
+    <dt>What is the most visited park?</dt>
+    <dd class="invisible">Great Smoky Mountain National Park, more than 9 Million guests per year.</dd>
 
-    <dt>Kobuk Valley national Park</dt>
-    <dd class="invisible">It is the least visited park, it receives just 3000 visitors per year.</dd>
+    <dt>What is the least visited park?</dt>
+    <dd class="invisible">Kobuk Valley national Park, it receives just 3000 visitors per year.</dd>
 
     <dt>Carlsbad Caverns National Park</dt>
     <dd class="invisible">It is home to the Nation's deepest cave.</dd>
@@ -59,20 +89,62 @@
     <dt>Glacier National Park</dt>
     <dd class="invisible">There are 25 active glaciers and more than 700 lakes of various sizes.</dd>
 
-    <dt>Mauna Loa Volcano in Hawaii Volcanoes National Park</dt>
-    <dd class="invisible">The largest volcano on earth both in terms of volume and height above its base. It contains
+    <dt>Which park contains the Largest Volcano</dt>
+    <dd class="invisible">Mauna Loa Volcano in Hawaii Volcanoes National Park, The largest volcano on earth both in
+        terms of volume and height above its base. It contains
         about 19,000 cubic miles of lava and rises more than 50,000 feet above its base, including the portion which is
         beneath the ocean.
     </dd>
 
-    <dt>Olympic National Park</dt>
-    <dd class="invisible">Bears have not killed a single person in the park, but a mountain goat, which is not a native
-        species to the region, killed a man in 2010.
+    <dt>Where is Olympic National Park Located?</dt>
+    <dd class="invisible">Port Angeles, Washington
     </dd>
 
 </dl>
 
 <a href="#" id="toggle-me">Click to view the facts.</a>
+
+<h3 id="grand-canyon-heading">Grand Canyon</h3>
+<ul id="grand-canyon">
+    <li>Bigger than the state of Rhoade Island.</li>
+    <li>The Hopi Tribe considers it to be the gateway to the Afterlife.</li>
+    <li>Has many hidden caves.</li>
+    <li>The most dangerous animal there is the rock squirrel.</li>
+
+</ul>
+
+<h3 id="yosimite-heading">Yosimite National Park </h3>
+<ul id="yosimite">
+    <li>The granite rock formations glow like fire at sunset.</li>
+    <li>One of the few places you can see a rainbow at night</li>
+    <li>Yosemite bid to host the Olympics in 1932</li>
+    <li>In 1970 a right broke out</li>
+
+</ul>
+<h3 id="zion-heading">Zion National Park</h3>
+<ul id="zion">
+    <li>Zion mains sanctuary or refuge in Hebrew</li>
+    <li>Home to 79 different mammals</li>
+    <li>Has one of the longest freestanding arches in the world</li>
+    <li>Established in 1909</li>
+
+</ul>
+<button id="press-me">click here to highlight some things</button>
+
+<div class="container">
+    <div class="row">
+        <div class="img-holder" id="frame1"></div>
+        <div class="img-holder" id="frame2"></div>
+        <div class="img-holder" id="frame3"></div>
+    </div>
+
+
+    <div class="row">
+        <button class="left">SWAP</button>
+        <button class="middle">SWAP</button>
+        <button class="right">SWAP</button>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -83,9 +155,37 @@
             $('dd').toggleClass("invisible");
         });
 
-        $('dt').click(function (){
-           $(this).toggleClass('highlight');
+        $('dt').click(function () {
+            $(this).toggleClass('highlight');
         });
+        $('#press-me').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+
+        });
+        $('h3').click(function () {
+            $(this).next().children().css('font-weight', 'bold');
+        });
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue');
+        });
+        var leftBtn = $('.left');
+        var middleBtn = $('.middle');
+        var rightBtn = $('.right');
+
+        $('#frame1').addClass('frame1');
+        $('#frame2').addClass('frame2');
+        $('#frame3').addClass('frame3');
+
+        leftBtn.click(function(){
+            $('#frame1').removeClass('frame1').addClass('frame2');
+            $('#frame2').removeClass('frame2').addClass('frame1');
+        })
+
+
+
+
     });
 </script>
 </body>
