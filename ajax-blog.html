@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <div class="row mb-2 blog-entry">
+    <div class="row mb-1 blog-entry">
 
 
     </div>
@@ -102,14 +102,13 @@
         $.get("/data/blog.json").done(function (data) {
             $('.blog-entry').html('');
             data.forEach(function (blog) {
-                var html = '<br>' + '<div className="col-md-6">'
-                html += '<div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">';
-                html += '<h3 className="mb-0 blog-title">' + blog.title + '</h3>';
-                html += '<div className="mb-1 text-muted blog-date">' + blog.date + '</div>';
-                html += '<p className="mb-auto blog-content">' + blog.content + '</p>';
-                html += '<div className="col p-4 d-flex flex-column position-static">' + '<strong className="d-inline-block mb-2 text-success blog-cat">' + blog.categories + '</strong>' + '<br>' + '<br>';
-                html += '<a href="#" className="stretched-link">' + 'Continue reading' + '</a>';
-                html += '</div>' + '</div>' + '</div>' + '<br>';
+                var html = '<div class="col-md-12 styling m-1">'
+                html += '<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">';
+                html += '<h3 class="mb-0 blog-title">' + blog.title + '</h3>';
+                html += '<div class="mb-1 text-muted blog-date">' + blog.date + '</div>';
+                html += '<p class="blog-content text-right" style="font-size: smaller">' + blog.content + '</p>';
+                html += '<div class="col p-4 d-flex flex-column position-static">' + '<strong class="d-inline-block mb-2 text-success blog-cat">' + blog.categories + '</strong>';
+                html += '</div>' + '</div>' + '</div>';
                 $('.blog-entry').append(html);
             });
         });
