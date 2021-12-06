@@ -15,16 +15,18 @@
         .navbar {
             margin-bottom: 1em;
         }
+        @keyframes fadeIn {
+            0%   {opacity: 0;}
+            100%  {opacity: 1;}
 
+        }
         #weather-cards {
             display: flex;
             justify-content: space-around;
+            animation-name: fadeIn;
+            animation-duration: 2s;
         }
 
-        #map {
-
-
-        }
     </style>
 </head>
 <body>
@@ -36,7 +38,7 @@
         <button class="btn btn-outline-success my-2 my-sm-0 submit-search" type="submit">Search</button>
     </form>
 </nav>
-<div class="container">
+<div class="container" style="height: 100%; width: 100%">
     <!--weather cards will render here-->
     <div class="row" id="weather-cards"></div>
 
@@ -77,18 +79,41 @@
                 var forecastBackground = data.daily[0].weather[0].main;
                 console.log(forecastBackground);
                 if (forecastBackground === 'Clear') {
-                    $('body').css('background-image', 'url("/img/sunny_day.jpeg")');
-                } else if ( forecastBackground === 'Clouds') {
-                    $('body').css('background-image', 'url("/img/cloudy.jpeg")');
-                } else if (forecastBackground === 'Rain' || forecastBackground === 'Drizzle' ) {
-                    $('body').css('background-image', 'url("/img/rainy_day.jpg")');
+                    $('body').css({
+                        'background-image': 'url("/img/sunny_day.jpeg")',
+
+                    });
+                } else if (forecastBackground === 'Clouds') {
+                    $('body').css({
+                        'background-image': 'url("/img/cloudy.jpeg")',
+
+
+                    });
+                } else if (forecastBackground === 'Rain' || forecastBackground === 'Drizzle') {
+                    $('body').css({
+                        'background-image': 'url("/img/rainy_day.jpg")',
+
+                    });
+
                 } else if (forecastBackground === 'Thunderstorm') {
-                    $('body').css('background-image', 'url("/img/thunderstorm.jpeg")');
+                    $('body').css({
+                        'background-image': 'url("/img/thunderstorm.jpeg")',
+
+
+                    });
                 } else if (forecastBackground === 'Snow') {
-                    $('body').css('background-image', 'url("/img/snowing.jpeg")');
+                    $('body').css({
+                        'background-image': 'url("/img/snowing.jpeg")',
+
+
+                    });
                 } else {
-                    $('body').css('background-color', 'skyblue');
+                    $('body').css({
+                        'background-color': 'skyblue',
+
+                    });
                 }
+
                 //sets up weather element
                 $('#weather-cards').html('');
                 //loop to only get five days
@@ -98,7 +123,7 @@
 
                     //html setup of cards, renders on weather-cards class
                     let html = "";
-                    html += '<div class="card border-primary" >'
+                    html += '<div class="card border-primary" style="animation-name: fadeIn; animation-duration: 2s;">'
                     html += '<div class="card-header text-center bg-dark" style="color: white">' + weatherDay.substring(0, 4) + '</div>';
                     html += '<div class="card-body text-center">' + '<div>' + data.daily[i].temp.min + "&#176F" + ' / ' + data.daily[i].temp.max + "&#176F" + '</div>';
                     html += '<div>' + '<img class ="icon" src="' + weatherIcon + '" alt="weather icon">' + '</div>' + '</div>';
@@ -127,7 +152,7 @@
         mapboxgl.accessToken = MAPBOX_KEY;
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v10',
+            style: 'mapbox://styles/mapbox/dark-v10',
             center: [-98.4683, 29.5312],
             zoom: 9
         });
@@ -139,7 +164,7 @@
                 "type": "raster",
                 "source": {
                     "type": "raster",
-                    "tiles": ['https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=' + WEATHER_KEY],
+                    "tiles": ['https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=' + WEATHER_KEY],
                     "tileSize": 256
                 },
                 "minzoom": 0,
