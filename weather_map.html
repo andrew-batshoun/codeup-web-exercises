@@ -15,6 +15,7 @@
         .navbar {
             margin-bottom: 1em;
         }
+        /*defines animation*/
         @keyframes fadeIn {
             0%   {opacity: 0;}
             100%  {opacity: 1;}
@@ -191,7 +192,7 @@
             .addTo(map);
 
 
-        //event when marker is dragged weather updates
+        //event when marker is dragged weather and location updates
         markerStart.on('dragend', function () {
             var location = markerStart.getLngLat();
             console.log(location);
