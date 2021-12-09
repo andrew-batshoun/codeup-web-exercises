@@ -21,7 +21,7 @@ function wait(seconds) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (Math.random() > 0.1) {
-                resolve('Awesome');
+                resolve('Resolved!');
             } else {
                 reject('Something went wrong!');
             }
@@ -29,7 +29,7 @@ function wait(seconds) {
     });
     }
 
-    wait(1000).then(() => console.log('You\'ll see this after 1 second'));
-    wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+    wait(1000).then(message => console.log('You\'ll see this after 1 second', message));
+    wait(3000).then(messages => console.log('You\'ll see this after 3 seconds', messages));
 })();
 
