@@ -51,7 +51,7 @@ console.log(userEmails);
 let totalYears = users.reduce((total, person) =>{
     return total + person.yearsOfExperience;
 }, 0)
-console.log(totalYears);
+
 
 let averageYears = totalYears / users.length;
 console.log(averageYears);
@@ -77,7 +77,16 @@ let allUsers = users.reduce( (previousValue, currentValue) => {
         return previousValue;
     }, []);
 
-console.log(`Your insructors are: ${allUsers}. `)
+console.log(`Your insructors are: ${allUsers}. `);
+
+//let instructor = users.reduce((finalstring, user, index) => {
+// if(index === users.length -1){
+//     return `${finalstring} ${user.name}.`
+// } else {
+//     return `${finalString} ${user.name},`
+// }
+// }, "Your instructors are:")
+
 
 // Bonus
 // Use .reduce to get the unique list of languages from the list of users.
@@ -92,5 +101,13 @@ let allLanguages = users.reduce( (previousValue, currentValue) => {
     }, [])
     return noduplicates;
 }, []);
-
 console.log(allLanguages)
+
+// let uniqueLangs = users.reduce((langList, user) => {
+//     for(let lang of user.languages){
+//         if (!langList.inlcudes(lang)){
+//             langList.push(lang);
+//         }
+//     }
+//     return langList;
+// }, [])
