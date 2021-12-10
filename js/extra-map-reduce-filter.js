@@ -97,6 +97,30 @@ console.log(averageAge);
 //         age: THE_TOTAL_OF_ALL_PET_AGES,
 //     breed: THE_FIRST_LETTERS_OF_ALL_PET_BREEDS_CONCATENATATED_INTO_A_SINGLE_STRING
 // }
+function makeSuperPet(array){
+    let petNames = array.reduce( (previousName, currentName) => {
+        return previousName.concat(currentName.name)
+    },[]);
+    let petAge = array.reduce( (previousAge, currentAge) => {
+        return previousAge + currentAge.age
+    }, 0);
+    let petBreed = array.reduce( (previousBreed, currentBreed) => {
+        for(let breed of currentBreed.breed ){
+            if(!previousBreed.includes(breed)){
+                previousBreed.push(breed)
+            }
+            return previousBreed
+        }
+    }, []);
+        let newObj = {
+            name: `${petNames}`,
+            age: petAge,
+            breed: `${petBreed}`
+        };
+        return newObj;
+}
+console.log(makeSuperPet(pets))
+
 // Create a function that takes in an array of pets and returns an array of the length of first names for pugs only. Your output for the given input should be [3, 6] for 'Bud' and 'Bowser'
 //
 // Create a function getFemaleFamilyMembers() that when given the family variable as an argument, returns an array of female family member names

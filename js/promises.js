@@ -6,11 +6,13 @@
     //function takes username to view last commit
     function getLastCommitDate(user) {
         fetch('https://api.github.com/users/' + user + "/events", {headers: {'Authorization': GITHUB_KEY}}).then(response => response.json()).then(data => {
-            let index = 0;
-            if(data[index].type === "PushEvent"){
-                console.log(`${user}'s last commit was : ${data[index].created_at.substring(0, 10)}`);
-            }else{
-                index++;
+            //    can use for of for(let event of data)
+            for(let index = 0; index < data.length; index++) {
+                //if(event.type === "PushEvent")
+                if (data[index].type === "PushEvent") {
+                    console.log(`${user}'s last commit was : ${data[index].created_at.substring(0, 10)}`);
+                    break;
+                }
             }
         });
     }
@@ -30,6 +32,6 @@ function wait(seconds) {
     }
 
     wait(1000).then(message => console.log('You\'ll see this after 1 second', message));
-    wait(3000).then(messages => console.log('You\'ll see this after 3 seconds', messages));
+    wait(3000).then(message => console.log('You\'ll see this after 3 seconds', message));
 })();
 
