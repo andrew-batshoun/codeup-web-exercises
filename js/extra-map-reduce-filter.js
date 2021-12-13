@@ -122,11 +122,36 @@ function makeSuperPet(array){
 console.log(makeSuperPet(pets))
 
 // Create a function that takes in an array of pets and returns an array of the length of first names for pugs only. Your output for the given input should be [3, 6] for 'Bud' and 'Bowser'
-//
+let pugsFirstName = (array) => {
+    let pugs = array.filter(arr => arr.breed === 'Pug');
+    let pugsName = pugs.map (arr => arr.name.length);
+
+    return pugsName
+
+
+};
+console.log(pugsFirstName(pets))
 // Create a function getFemaleFamilyMembers() that when given the family variable as an argument, returns an array of female family member names
-//
+let getFemaleFamilyMembers = (arr) => {
+    let females = arr.filter( array => {
+        if(array.gender === "female"){
+            return array.name
+        }
+
+    })
+    let namesOnly = females.map(name => name.name)
+    return namesOnly;
+}
+
+console.log(getFemaleFamilyMembers(family));
 // Create a function makeLongPetString() that when given the variable of pets, returns a string of all property values with dashes separating each property value
-//
+function makeLongPetString(array) {
+    let allTogether = array.map(arr => arr.name + "-" + arr.age + "-" + arr.breed)
+
+    return allTogether.join('-')
+}
+
+console.log(makeLongPetString(pets))
 // Create a function that when given an array of first names, returns an array of the same names with a last name of Smith
 
 // input = ['Sally', 'Fred', 'Steve']
