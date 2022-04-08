@@ -153,13 +153,27 @@ function makeLongPetString(array) {
 
 console.log(makeLongPetString(pets))
 // Create a function that when given an array of first names, returns an array of the same names with a last name of Smith
+function addSmith(array){
+    return array.map(firstName => firstName + " Smith");
+}
+console.log(addSmith(['Sally', 'Fred', 'Steve']))
 
 // input = ['Sally', 'Fred', 'Steve']
-// output = ['Sally Smith', 'Fred Smith', 'Steve']
+// output = ['Sally Smith', 'Fred Smith', 'Steve Smith']
+
 // Create a function that when given an array of numbers, return the sum of the even numbers
-//
+
+function returnEven(array) {
+    return array.filter(even =>  !(even % 2)).reduce((a, b) => a + b);
+
+}
+
+console.log(returnEven([1, 2, 3, 4, 5, 6, 7, 8]))
+
 // Create a function that when given an array of numbers, return the sum of all numbers evenly divisible by 10
-//
+
+
+
 // Create a function that when given an array of names, return a string of all the first letters of each name
 //
 // Create a function that when given an array of values, returns an array of only the truthy values
